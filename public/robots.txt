@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://pentastudio.tech
+
+# Sitemaps
+Sitemap: https://pentastudio.tech/sitemap.xml

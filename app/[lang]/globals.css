@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060b27;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #29e68c;
+  border-radius: 5px;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #29e68c transparent;
+}
+::selection {
+  background: #29e68c;
+  color: #060b27;
+}
+
+/* Home page and main component */
+.gradient-border-b {
+  position: relative;
+}
+.gradient-border-b::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #166c43 0%, #40f4b1 50%, #166c43 100%);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.main-bg-img {
+  bottom: -170px;
+}
+
+@media (min-height: 950px) {
+  .main-bg-img {
+    bottom: -50px;
+  }
+}
+
+.smooth-gradient-transition {
+  transition: background 0.7s ease, color 0.7s ease,
+    -webkit-text-fill-color 0.7s ease;
+}
+
+/* Performance optimizations */
+.animate-marquee-desktop,
+.animate-marquee-tablet,
+.animate-marquee-mobile {
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Add to your globals.css */
+@keyframes slideFadeIn {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-fade-in {
+  animation: slideFadeIn 0.5s ease-out forwards;
+}
+
+@keyframes slideFadeInDelayed {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+    filter: blur(25px);
+  }
+  50% {
+    transform: translateY(40px);
+    opacity: 0.5;
+    filter: blur(15px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.animate-slide-fade-in-delayed {
+  animation: slideFadeInDelayed 1s ease-out 0.3s forwards;
+  will-change: transform, opacity, filter;
+}
+
+/* main title */
+.hidden-before-view {
+  opacity: 0;
+  transform: translateX(0);
+}
+
+/* Animations */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation classes */
+.animate-slide-left {
+  animation: slideLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.5s ease-out forwards;
+}
+
+/* slide in our services */
+@keyframes slideFadeInUp {
+  0% { transform: translateY(100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideFadeInLeft {
+  0% { transform: translateX(-50px) translateY(100px); opacity: 0; }
+  100% { transform: translateX(0) translateY(0); opacity: 1; }
+}
+
+@keyframes slideFadeInRight {
+  0% { transform: translateX(50px) translateY(100px); opacity: 0; }
+  100% { transform: translateX(0) translateY(0); opacity: 1; }
+}
+
+.animate-up { animation: slideFadeInUp 0.8s ease-out forwards; }
+.animate-left { animation: slideFadeInLeft 0.8s ease-out forwards; }
+.animate-right { animation: slideFadeInRight 0.8s ease-out forwards; }

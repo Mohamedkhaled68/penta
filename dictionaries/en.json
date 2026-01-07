@@ -1,0 +1,67 @@
+{
+    "navbar": {
+        "home": "Home",
+        "services": "Services",
+        "works": "Our Work",
+        "partners": "Our Partners",
+        "about": "About",
+        "blog": "Blog",
+        "contact": "Contact"
+    },
+    "footer": {
+        "home": "Home",
+        "services": "Services",
+        "works": "Our Work",
+        "partners": "Our Partners",
+        "about": "About",
+        "blog": "Blog",
+        "contact": "Contact Us",
+        "input_placeholder": "Enter your email",
+        "location": "Location"
+    },
+    "hero": {
+        "heading": {
+            "line1": "Transform Ideas Into Secure",
+            "line2": "Digital Products"
+        },
+        "description": "Penta Studio helps businesses worldwide design, build, and scale modern web, mobile, and cloud-native solutions.",
+        "startBtn": "Start Now",
+        "companyProfileBtn": "Company Profile"
+    },
+    "ourServices": {
+        "title": "Our Services",
+        "subtitle": "Building Future-Ready Digital Solutions",
+        "description": "At Penta Studio, we provide more than just development, we craft end-to-end digital products that help businesses innovate, grow, and scale with confidence. From sleek websites to powerful mobile apps, from intuitive designs to cloud-native systems, our services are tailored to turn your vision into measurable outcomes.",
+        "service1": {
+            "title": "Custom Application Development",
+            "description": "We create custom applications tailored to your unique business requirements."
+        },
+        "service2": {
+            "title": "تصميم واجهة المستخدم وتجربة المستخدم (UI/UX)",
+            "description": "نصمم واجهات مستخدم جذابة وسهلة الاستخدام لتحسين تجربة المستخدم."
+        },
+        "service3": {
+            "title": "الاستشارات التقنية",
+            "description": "نوفر استشارات تقنية لمساعدتك في اتخاذ قرارات مستنيرة بشأن استراتيجيات التكنولوجيا الخاصة بك."
+        }
+    },
+    "ourProcess": {
+        "title": "Our Process",
+        "subtitle": "From vision to launch, built for results",
+        "description": "At Penta Studio, we follow a structured process that balances creativity, engineering, and speed. Every step is designed to reduce risks, deliver value fast, and ensure your product scales with confidence.",
+        "steps": [
+            {
+                "title": "Discovery",
+                "description": "We gather insights, define goals, and identify early risks to build a clear product vision."
+            },
+            {
+                "title": "Definition",
+                "description": "Shape requirements, validate product-market fit, and align the roadmap with business needs."
+            },
+            {
+                "title": "Design",
+                "description": "Create wireframes, prototypes, and user-tested interfaces to ensure usability from day one."
+            }
+        ]
+    }
+}
