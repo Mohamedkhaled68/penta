@@ -44,7 +44,7 @@ export default function OurProcessCards() {
 
     return (
         <div className="w-full grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6 justify-evenly mx-auto">
-            {productProcessPhases.map((product, idx) => (
+            {productProcessPhases.map((product) => (
                 <AnimateOnView
                     key={product.id}
                     animation="up"

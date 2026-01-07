@@ -1,4 +1,11 @@
 {
+    "global": {
+        "loading": "Loading...",
+        "read_more": "Read More",
+        "see_more": "See More",
+        "see_less": "See Less",
+        "learn_more": "Learn More"
+    },
     "navbar": {
         "home": "Home",
         "services": "Services",
@@ -30,20 +37,30 @@
     },
     "ourServices": {
         "title": "Our Services",
-        "subtitle": "Building Future-Ready Digital Solutions",
+        "subtitle": "Building future-ready digital solutions",
         "description": "At Penta Studio, we provide more than just development, we craft end-to-end digital products that help businesses innovate, grow, and scale with confidence. From sleek websites to powerful mobile apps, from intuitive designs to cloud-native systems, our services are tailored to turn your vision into measurable outcomes.",
-        "service1": {
-            "title": "Custom Application Development",
-            "description": "We create custom applications tailored to your unique business requirements."
-        },
-        "service2": {
-            "title": "تصميم واجهة المستخدم وتجربة المستخدم (UI/UX)",
-            "description": "نصمم واجهات مستخدم جذابة وسهلة الاستخدام لتحسين تجربة المستخدم."
-        },
-        "service3": {
-            "title": "الاستشارات التقنية",
-            "description": "نوفر استشارات تقنية لمساعدتك في اتخاذ قرارات مستنيرة بشأن استراتيجيات التكنولوجيا الخاصة بك."
-        }
+        "services": [
+            {
+                "title": "Management Systems",
+                "description": "We design and build custom management platforms like ERP, CRM, and dashboards that give you real-time visibility and control. Automate workflows, track performance, and make smarter decisions with tailored systems built around your business needs."
+            },
+            {
+                "title": "AI Tools & Automation",
+                "description": "Unlock the power of artificial intelligence with tools that optimize efficiency and decision-making. From predictive analytics and chatbots to automated workflows, we help you integrate AI to streamline operations and boost customer experiences."
+            },
+            {
+                "title": "Cloud & DevOps",
+                "description": "We help you deploy and scale with confidence using cloud-native infrastructure and DevOps practices. With CI/CD pipelines, autoscaling, and 24/7 monitoring, our solutions keep your systems secure, reliable, and ready for growth at any scale."
+            },
+            {
+                "title": "Mobile Applications",
+                "description": "We create high-performance mobile apps for iOS and Android that combine sleek design with flawless functionality. Whether it’s a consumer-facing app or an enterprise tool, we deliver intuitive experiences that keep users engaged and businesses connected."
+            },
+            {
+                "title": "Web Development",
+                "description": "Our team delivers modern, scalable, and secure websites that don’t just look good, they perform. From corporate sites to e-commerce platforms, we build web solutions that are SEO-friendly, responsive, and optimized for growth and reliability."
+            }
+        ]
     },
     "ourProcess": {
         "title": "Our Process",
@@ -63,5 +80,22 @@
                 "description": "Create wireframes, prototypes, and user-tested interfaces to ensure usability from day one."
             }
         ]
+    },
+    "ourPartners": {
+        "title": "Our Partners & Clients"
+    },
+    "ourPortfolio": {
+        "title": "Our Portfolio",
+        "subtitle": "Custom Software Development Success Stories",
+        "description": "Discover how Penta Studio has transformed businesses through innovative software solutions. From Fortune 500 enterprises to innovative startups, explore our portfolio of 50+ successful projects including web applications, mobile apps, e-commerce platforms, and enterprise systems that deliver measurable ROI and competitive advantages."
+    },
+    "feedback": {
+        "title": "What Our Clients Say",
+        "description": " Real feedback from businesses that trusted Penta Studio to build and scale their digital products."
+    },
+    "get_started": {
+        "title": "Your Next Big Product Starts Here",
+        "subtitle": "Let's turn your idea into a high-impact digital solution",
+        "btn": "Contact Us"
     }
 }
