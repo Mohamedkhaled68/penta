@@ -97,5 +97,41 @@
         "title": "Your Next Big Product Starts Here",
         "subtitle": "Let's turn your idea into a high-impact digital solution",
         "btn": "Contact Us"
+    },
+    "about_page": {
+        "section1": {
+            "title": "About Penta Studio",
+            "description": "At Penta Studio, we design more than software, we create the digital infrastructure that drives innovation. Our mission is to help businesses of all sizes rethink operations, customer engagement, and growth through secure, future-ready digital solutions.",
+            "points": {
+                "title": "We specialize in every layer of enterprise-grade software:",
+                "list": [
+                    "Customer experience platforms that enhance user engagement",
+                    "AI-powered tools that optimize decision-making",
+                    "Custom management systems (ERP, CRM) that streamline internal operations"
+                ]
+            }
+        },
+        "section2": {
+            "title": "Why We Stand Out",
+            "description": "We combine human-centric design with scalable engineering to deliver measurable results across industries.",
+            "cards": [
+                {
+                    "title": "Outcome-Driven",
+                    "description": "Every solution we build is aligned with real business goals."
+                },
+                {
+                    "title": "Human-Centric",
+                    "description": "We design experiences that benefit customers, employees, and stakeholders."
+                },
+                {
+                    "title": "Future-Ready",
+                    "description": "We design experiences that benefit customers, employees, and stakeholders."
+                }
+            ]
+        },
+        "section3": {
+            "title": "Ready to Build Something Remarkable?",
+            "description": "Whether you're launching a digital product or transforming internal workflows, our team is ready to bring your vision to life."
+        }
     }
 }

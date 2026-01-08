@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import svg1 from "@/public/About/Frame3.svg";
 import svg2 from "@/public/About/Frame2.svg";
 import svg3 from "@/public/About/Frame1.svg";
 import Image from "next/image";
 import { AnimateOnView } from "@/components/global components/AnimateOnView";
+import { useDictionary } from "@/hooks/useDictionary";
 
 const featuresData = [
     {
@@ -30,11 +32,13 @@ const featuresData = [
 ];
 
 export default function WhyWeStandOut() {
+    const dictionary = useDictionary();
+
     return (
         <section className="w-full h-max relative flex flex-col gap-8 items-start justify-between max-sm:pt-6 py-16 px-20 max-md:px-6">
             <AnimateOnView animation="up">
                 <h1 className="text-2xl w-max font-bold text-start border-b-2 border-b-[#29E68B]">
-                    Why We Stand Out{" "}
+                    {dictionary?.about_page?.section2?.title}
                 </h1>
             </AnimateOnView>
             <AnimateOnView
@@ -42,17 +46,10 @@ export default function WhyWeStandOut() {
                 delay={200}
                 className="w-5/6 max-md:w-full"
             >
-                <p>
-                    With a proven track record across industries, we partner
-                    with forward-thinking companies to transform ideas into
-                    digital products that inspire trust, empower people, and
-                    create measurable business impact. Our agile development
-                    methodology ensures we deliver quality software on time and
-                    within budget.
-                </p>
+                <p>{dictionary?.about_page?.section2?.description}</p>
             </AnimateOnView>
             <div className="w-full grid grid-cols-3 max-md:grid-cols-1 justify-between gap-8">
-                {featuresData.map((feature) => (
+                {featuresData.map((feature, idx) => (
                     <AnimateOnView
                         animation="up"
                         key={feature.id}
@@ -65,11 +62,17 @@ export default function WhyWeStandOut() {
                         />
 
                         <h3 className="text-white text-3xl font-bold">
-                            {feature.title}
+                            {
+                                dictionary?.about_page?.section2?.cards[idx]
+                                    ?.title
+                            }
                         </h3>
 
                         <p className="text-[#F6F6F7] text-lg leading-relaxed w-5/6">
-                            {feature.desc}
+                            {
+                                dictionary?.about_page?.section2?.cards[idx]
+                                    ?.description
+                            }
                         </p>
                     </AnimateOnView>
                 ))}

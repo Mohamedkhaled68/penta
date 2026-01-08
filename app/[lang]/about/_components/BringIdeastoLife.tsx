@@ -3,6 +3,7 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import contact from "@/public/About/contactt.svg";
 import Image from "next/image";
 import { AnimateOnView } from "@/components/global components/AnimateOnView";
+import { useDictionary } from "@/hooks/useDictionary";
 // TypeScript interfaces
 interface FormData {
     firstName: string;
@@ -33,6 +34,8 @@ export default function BringIdeastoLife() {
         message: "",
         agreeToTerms: false,
     });
+
+    const dictionary = useDictionary();
 
     const [errors, setErrors] = useState<FormErrors>({});
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -136,11 +139,10 @@ export default function BringIdeastoLife() {
 
                 <div className="flex flex-col gap-4">
                     <h1 className="text-5xl max-md:text-2xl font-bold text-whit">
-                        Bring Ideas to Life
+                        {dictionary?.about_page?.section3?.title}
                     </h1>
                     <p className="text-[#98989A] text-lg max-sm:text-base">
-                        Let&apos;s make your next product, space, or message
-                        unforgettable and immersive by design.
+                        {dictionary?.about_page?.section3?.description}
                     </p>
                 </div>
             </AnimateOnView>

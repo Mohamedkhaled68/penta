@@ -64,13 +64,13 @@ export default function OurServicesComponents() {
                         <span itemProp="audience">Business Management</span>
                     </div>
 
-                    <Link
+                    {/* <Link
                         href="/services/management-systems"
                         className="w-full sm:w-[200px] mx-auto lg:mx-0 h-[45px] sm:h-[50px] bg-[#15193485] hover:backdrop-blur-3xl border-[1px] border-[#282D45] text-[#F6F6F7] text-sm sm:text-base font-medium cursor-pointer rounded-[36px] transition-all duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px] hover:border-[#29E68C] focus:outline-none focus:ring-2 focus:ring-[#29E68C]"
                         aria-label="Learn more about management systems development services"
                     >
                         {dictionary?.global?.learn_more}
-                    </Link>
+                    </Link> */}
                 </div>
 
                 <figure className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] lg:h-[373px] max-w-[400px] lg:max-w-[518px] mx-auto">
