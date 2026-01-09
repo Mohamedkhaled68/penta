@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState, FormEvent } from "react";
 import logo from "@/public/Logo.svg";
 import Penta from "@/public/Penta.svg";
 import {
@@ -15,11 +15,46 @@ import {
 import Link from "next/link";
 import { useDictionary } from "@/hooks/useDictionary";
 import { useParams } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
     const dictionary = useDictionary();
     const { lang } = useParams<{ lang: string }>();
+
+    // Add state for newsletter form
+    const [newsletterEmail, setNewsletterEmail] = useState<string>("");
+    const [isSubmittingNewsletter, setIsSubmittingNewsletter] = useState<boolean>(false);
+
+    // Handle newsletter form submission
+    const handleNewsletterSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (!newsletterEmail || !/\S+@\S+\.\S+/.test(newsletterEmail)) {
+            toast.error("Please enter a valid email address.");
+            return;
+        }
+
+        setIsSubmittingNewsletter(true);
+
+        try {
+            const response = await fetch('/api/newsletter', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: newsletterEmail }),
+            });
+
+            if (!response.ok) throw new Error('Failed to subscribe');
+
+            toast.success(dictionary?.footer?.newsletter?.toast?.success || "Thank you for subscribing! We'll keep you updated.");
+            setNewsletterEmail("");
+        } catch (error) {
+            console.error('Error subscribing to newsletter:', error);
+            toast.error(dictionary?.footer?.newsletter?.toast?.error || "Failed to subscribe. Please try again.");
+        } finally {
+            setIsSubmittingNewsletter(false);
+        }
+    };
 
     return (
         <footer
@@ -36,6 +71,7 @@ export default function Footer() {
                             Subscribe to our newsletter
                         </h2>
                         <form
+                            onSubmit={handleNewsletterSubmit}
                             className="flex gap-4 max-md:flex-col max-md:gap-4 items-center max-md:items-stretch"
                             role="search"
                             aria-label="Newsletter subscription"
@@ -48,6 +84,8 @@ export default function Footer() {
                                 id="email-input"
                                 type="email"
                                 name="email"
+                                value={newsletterEmail}
+                                onChange={(e) => setNewsletterEmail(e.target.value)}
                                 placeholder={
                                     dictionary?.footer?.input_placeholder ||
                                     "Enter your email"
@@ -63,10 +101,11 @@ export default function Footer() {
                             </p>
                             <button
                                 type="submit"
+                                disabled={isSubmittingNewsletter}
                                 className="w-[120px] max-md:w-[40%] max-md:mx-auto h-[46px] bg-[#29E68C] hover:bg-[#4FF0A3] text-[#070707] text-base font-medium cursor-pointer rounded-[36px] transition-all duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px] max-sm:mt-3"
                                 aria-label="Subscribe to Penta Studio newsletter"
                             >
-                                {dictionary?.footer?.contact || "Subscribe"}
+                                {isSubmittingNewsletter ? (dictionary?.footer?.subscribing || "Subscribing...") : (dictionary?.footer?.subscribe_button || "Subscribe")}
                             </button>
                         </form>
                     </section>
@@ -291,7 +330,6 @@ export default function Footer() {
                             >
                                 <Twitter
                                     className="w-6 h-6 max-md:w-4 max-md:h-4 text-[#29E68B] group-hover:text-[#060B27] transition-colors duration-200"
-                                    aria-hidden="true"
                                 />
                             </a>
                         </li>

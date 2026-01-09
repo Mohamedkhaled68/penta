@@ -3,6 +3,7 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import contact from "@/public/About/contactt.svg";
 import Image from "next/image";
 import { AnimateOnView } from "@/components/global components/AnimateOnView";
+import toast from "react-hot-toast";
 import { useDictionary } from "@/hooks/useDictionary";
 // TypeScript interfaces
 interface FormData {
@@ -99,6 +100,7 @@ export default function BringIdeastoLife() {
         e.preventDefault();
 
         if (!validateForm()) {
+            toast.error("Please fix the form errors before submitting.");
             return;
         }
 
@@ -106,31 +108,30 @@ export default function BringIdeastoLife() {
         setSubmitStatus("idle");
 
         try {
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             });
 
-            if (!response.ok) {
-                throw new Error("Failed to submit form");
-            }
+            if (!response.ok) throw new Error('Failed to submit form');
 
-            setSubmitStatus("success");
+            setSubmitStatus('success');
             setFormData({
-                firstName: "",
-                lastName: "",
-                email: "",
-                phoneNumber: "",
-                message: "",
+                firstName: '',
+                lastName: '',
+                email: '',
+                phoneNumber: '',
+                message: '',
                 agreeToTerms: false,
             });
             setErrors({});
+
+            toast.success("Thanks for reaching out! We’ll call you back shortly.");
         } catch (error) {
-            console.error("Error submitting form:", error);
-            setSubmitStatus("error");
+            console.error('Error submitting form:', error);
+            setSubmitStatus('error');
+            toast.error("Oops! Something went wrong. Please try again.");
         } finally {
             setIsSubmitting(false);
         }
@@ -360,9 +361,9 @@ export default function BringIdeastoLife() {
                         >
                             {isSubmitting
                                 ? dictionary?.about_page?.section3?.form
-                                      ?.submitting_btn
+                                    ?.submitting_btn
                                 : dictionary?.about_page?.section3?.form
-                                      ?.submit_btn}
+                                    ?.submit_btn}
                         </button>
                     </div>
                 </div>
@@ -371,7 +372,7 @@ export default function BringIdeastoLife() {
                 {/* Submit Button */}
 
                 {/* Status Messages */}
-                {submitStatus === "success" && (
+                {/* {submitStatus === "success" && (
                     <div className="text-[#29E68C] text-center mt-4">
                         ✅{" "}
                         {
@@ -385,7 +386,7 @@ export default function BringIdeastoLife() {
                         ❌{" "}
                         {dictionary?.about_page?.section3?.form?.error_message}
                     </div>
-                )}
+                )} */}
             </AnimateOnView>
         </section>
     );

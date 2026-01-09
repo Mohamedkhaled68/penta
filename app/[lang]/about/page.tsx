@@ -102,7 +102,9 @@ export default function page() {
             <div className="relative w-full min-h-screen overflow-hidden">
                 <AboutPenta />
                 <WhyWeStandOut />
-                <BringIdeastoLife />
+                <section id="contact" className="scroll-mt-16">
+                    <BringIdeastoLife />
+                </section>
             </div>
         </>
     );

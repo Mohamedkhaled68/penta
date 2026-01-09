@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 
 export function useDictionary() {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [dictionary, setDictionary] = useState<any>(null);
     const { lang } = useParams<{ lang: "en" | "ar" }>();
 

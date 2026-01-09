@@ -27,7 +27,15 @@
         "terms": "Terms of Service",
         "input_placeholder": "Enter your email",
         "location": "Location",
-        "footer_text": "All rights reserved."
+        "footer_text": "All rights reserved.",
+                "subscribe_button": "Subscribe",
+        "subscribing": "Subscribing...",        
+         "newsletter": {
+            "toast": {
+                "success": "Thank you for subscribing! We'll keep you updated.",
+                "error": "Failed to subscribe. Please try again."
+            }
+        }
     },
     "hero": {
         "heading": {
@@ -162,6 +170,11 @@
                 "submit_btn": "Send",
                 "agree_text": "I agree with Terms of Use and Privacy Policy",
                 "submitting_btn": "Sending...",
+                "toast": {
+                    "fix_errors": "Please fix the form errors before submitting.",
+                    "success": "Thanks for reaching out! We’ll call you back shortly.",
+                    "error": "Oops! Something went wrong. Please try again."
+                },
                 "errors": {
                     "first_name_required": "First name must be at least 2 characters",
                     "last_name_required": "Last name must be at least 2 characters",

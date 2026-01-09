@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import MobileNavbar from "./MobileNavbar";
 import Footer from "./Footer";
 import { useLanguagePersistence } from "@/hooks/useLanguagePersistence";
+import { Toaster } from "react-hot-toast";
 
 export default function ClientLayout({
     children,
@@ -17,6 +18,7 @@ export default function ClientLayout({
             <Navbar />
             <MobileNavbar />
             {children}
+            <Toaster position="top-center" reverseOrder={false} />
             <Footer />
         </>
     );
