@@ -4,19 +4,22 @@ import Image from "next/image";
 import logo from "@/public/Logo.svg";
 import Penta from "@/public/Penta.svg";
 import Link from "next/link";
+import Contact from "@/public/Icons/Contact.svg";
 import { usePathname } from "next/navigation";
+import { useDictionary } from "@/hooks/useDictionary";
 
 export default function MobileNavbar() {
     const [open, setOpen] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
     const pathname = usePathname();
+    const dictionary = useDictionary();
 
     const links = [
-        { href: "/", label: "Home" },
-        { href: "#services", label: "Services" },
-        { href: "#our-work", label: "Our Work" },
-        { href: "#our-partners", label: "Our Partners" },
-        { href: "/about", label: "About" },
+        { href: "/", label: `${dictionary?.navbar.home}` },
+        { href: "#services", label: `${dictionary?.navbar.services}` },
+        { href: "#our-work", label: `${dictionary?.navbar.works}` },
+        // { href: "#our-partners", label: "Our Partners" },
+        { href: "/about", label: `${dictionary?.navbar.about}` },
         // { href: "/blog", label: "Blog" },
     ];
 
@@ -54,14 +57,13 @@ export default function MobileNavbar() {
     };
 
     const getLinkClass = (href: string): string => {
-        const isActive = href.startsWith("#") 
+        const isActive = href.startsWith("#")
             ? pathname === "/" && window.location.hash === href
             : pathname === href;
-        return `text-xl font-medium transition-all duration-300 ease-in-out cursor-pointer relative ${
-            isActive
-                ? 'text-[#29E68C]'
-                : 'text-[#8F9BB7]'
-        }`;
+        return `text-xl font-medium transition-all duration-300 ease-in-out cursor-pointer relative ${isActive
+            ? 'text-[#29E68C]'
+            : 'text-[#8F9BB7]'
+            }`;
     };
 
     const scrollToSection = (sectionId: string): void => {
@@ -104,23 +106,20 @@ export default function MobileNavbar() {
 
             {/* Overlay Menu */}
             {open && (
-                <div className={`fixed inset-0 z-50 bg-[#0E2334]/20 backdrop-blur-3xl flex flex-col items-center justify-start pt-16 transition-all duration-300 ease-in-out ${
-                    isAnimating ? 'opacity-100' : 'opacity-0'
-                }`}>
+                <div className={`fixed inset-0 z-50 bg-[#0E2334]/20 backdrop-blur-3xl flex flex-col items-center justify-start pt-16 transition-all duration-300 ease-in-out ${isAnimating ? 'opacity-100' : 'opacity-0'
+                    }`}>
                     <button
                         onClick={handleCloseMenu}
-                        className={`absolute top-8 right-[38px] text-3xl text-[#29E68C] focus:outline-none cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-90 ${
-                            isAnimating ? 'opacity-100 rotate-0' : 'opacity-0 rotate-180'
-                        }`}
+                        className={`absolute top-8 right-[38px] text-3xl text-[#29E68C] focus:outline-none cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-90 ${isAnimating ? 'opacity-100 rotate-0' : 'opacity-0 rotate-180'
+                            }`}
                         aria-label="Close menu"
                     >
                         &times;
                     </button>
-                    <nav className={`flex flex-col gap-5 items-center transform transition-all duration-500 ease-out ${
-                        isAnimating ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-5 opacity-0 scale-95'
-                    }`}>
+                    <nav className={`flex flex-col gap-5 items-center transform transition-all duration-500 ease-out ${isAnimating ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-5 opacity-0 scale-95'
+                        }`}>
                         {links.map((link, index) => {
-                            const isActive = link.href.startsWith("#") 
+                            const isActive = link.href.startsWith("#")
                                 ? pathname === "/" && window.location.hash === link.href
                                 : pathname === link.href;
 
@@ -133,15 +132,14 @@ export default function MobileNavbar() {
                                     }}
                                     onMouseEnter={e => handleMouseEnter(e, isActive)}
                                     onMouseLeave={handleMouseLeave}
-                                    className={`${getLinkClass(link.href)} transform transition-all duration-300 hover:scale-105 ${
-                                        isAnimating 
-                                            ? 'translate-x-0 opacity-100' 
-                                            : index % 2 === 0 
-                                                ? '-translate-x-8 opacity-0' 
-                                                : 'translate-x-8 opacity-0'
-                                    }`}
-                                    style={{ 
-                                        transitionDelay: isAnimating ? `${index * 50}ms` : `${(links.length - index) * 30}ms` 
+                                    className={`${getLinkClass(link.href)} transform transition-all duration-300 hover:scale-105 ${isAnimating
+                                        ? 'translate-x-0 opacity-100'
+                                        : index % 2 === 0
+                                            ? '-translate-x-8 opacity-0'
+                                            : 'translate-x-8 opacity-0'
+                                        }`}
+                                    style={{
+                                        transitionDelay: isAnimating ? `${index * 50}ms` : `${(links.length - index) * 30}ms`
                                     }}
                                 >
                                     {link.label}
@@ -153,21 +151,34 @@ export default function MobileNavbar() {
                                     onClick={handleCloseMenu}
                                     onMouseEnter={e => handleMouseEnter(e, isActive)}
                                     onMouseLeave={handleMouseLeave}
-                                    className={`${getLinkClass(link.href)} transform transition-all duration-300 hover:scale-105 ${
-                                        isAnimating 
-                                            ? 'translate-x-0 opacity-100' 
-                                            : index % 2 === 0 
-                                                ? '-translate-x-8 opacity-0' 
-                                                : 'translate-x-8 opacity-0'
-                                    }`}
-                                    style={{ 
-                                        transitionDelay: isAnimating ? `${index * 50}ms` : `${(links.length - index) * 30}ms` 
+                                    className={`${getLinkClass(link.href)} transform transition-all duration-300 hover:scale-105 ${isAnimating
+                                        ? 'translate-x-0 opacity-100'
+                                        : index % 2 === 0
+                                            ? '-translate-x-8 opacity-0'
+                                            : 'translate-x-8 opacity-0'
+                                        }`}
+                                    style={{
+                                        transitionDelay: isAnimating ? `${index * 50}ms` : `${(links.length - index) * 30}ms`
                                     }}
                                 >
                                     {link.label}
                                 </Link>
                             );
                         })}
+                        <div className=" mt-20 h-[50px] w-[136px] flex justify-center items-center">
+                            <a
+                                href="https://wa.me/0201551850855"
+                                target="_blank"
+                                className="w-[120px] h-[40px] bg-[#29E68C] hover:bg-[#4FF0A3] text-[#070707] text-base font-medium cursor-pointer rounded-[36px] transition-all duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px]"
+                            >
+                                {dictionary?.navbar.contact}
+                                <Image
+                                    src={Contact}
+                                    alt="Contact with penta team"
+                                    className="h-4 w-4"
+                                />
+                            </a>
+                        </div>
                     </nav>
                 </div>
             )}

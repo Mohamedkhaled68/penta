@@ -314,22 +314,22 @@ export default function OurWorksCards() {
                                         {work.type}
                                     </p>
 
-                                    <a
+                                    {/* <a
                                         href={work.link}
                                         className="inline-flex items-center gap-2 font-medium transition-all duration-500 group-hover:gap-3 bg-gradient-to-b from-[#F6F6F7] via-[#F6F6F7] to-[#29E68C] bg-clip-text text-transparent hover:scale-105"
                                         aria-label={`Read more about ${work.title} project`}
                                         itemProp="url"
                                     >
                                         Read more
-                                    </a>
+                                    </a> */}
                                 </footer>
 
                                 {/* Hidden tools for SEO */}
-                                <div className="sr-only">
+                                {/* <div className="sr-only">
                                     Technologies used: {work.tools.map(tool => (
                                         <span key={tool} itemProp="keywords">{tool}</span>
                                     ))}
-                                </div>
+                                </div> */}
                             </article>
                         </SwiperSlide>
                     ))}
