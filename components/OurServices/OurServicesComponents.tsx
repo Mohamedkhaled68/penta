@@ -74,7 +74,7 @@ export default function OurServicesComponents() {
                     </Link> */}
                 </div>
 
-                <figure className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] lg:h-[373px] max-w-[400px] lg:max-w-[518px] mx-auto rounded-2xl lg:rounded-3xl overflow-hidden">
+                <figure className="relative w-1/2 max-lg:w-full h-[250px] sm:h-[300px] lg:h-[373px] max-w-[400px] lg:max-w-[518px] mx-auto rounded-2xl rounded-3xl overflow-hidden">
                     <Image
                         src={Management}
                         alt="Custom ERP and CRM dashboard interface showing business analytics, workflow automation, and real-time reporting features"
@@ -90,9 +90,9 @@ export default function OurServicesComponents() {
             {/* Web Development */}
             <AnimateOnView
                 animation="up"
-                className="col-span-2 h-[400px] max-lg:h-[560px] max-md:h-[425px] rounded-xl flex flex-col-reverse lg:flex-row justify-between items-center gap-6 sm:gap-8 lg:gap-20 bg-[#0E1330]/95 border-2 border-[#282D45] p-4 sm:p-8 lg:p-16 relative overflow-hidden"
+                className="col-span-2 h-[400px] max-lg:h-[560px] max-md:h-[540px] max-sm:h-[425px] rounded-xl flex flex-col-reverse lg:flex-row justify-between items-center gap-6 sm:gap-4 lg:gap-20 bg-[#0E1330]/95 border-2 border-[#282D45] p-4 sm:p-8 lg:p-16 relative overflow-hidden"
             >
-                <figure className="relative w-1/2 max-lg:w-full h-[300px] max-lg:h-[390px] rounded-3xl overflow-hidden">
+                <figure className="relative w-1/2 max-lg:w-full h-[300px] max-lg:h-[390px] max-md:h-[300px] rounded-3xl overflow-hidden z-50">
                     <Image
                         src={WebDevelopment}
                         alt="Modern web development portfolio featuring responsive websites, e-commerce platforms, and progressive web applications with SEO optimization"
@@ -148,7 +148,7 @@ export default function OurServicesComponents() {
             {/* Mobile Applications */}
             <AnimateOnView
                 animation="up"
-                className="col-span-2 h-[400px] max-lg:h-[560px] max-md:h-[425px] rounded-xl flex max-lg:flex-col flex-row justify-between items-center gap-6 sm:gap-8 lg:gap-20 bg-[#0E1330]/95 border-2 border-[#282D45] p-4 sm:p-8 lg:p-16 relative overflow-hidden"
+                className="col-span-2 h-[400px] max-lg:h-[560px] max-md:h-[560px] max-sm:h-[425px]  rounded-xl flex max-lg:flex-col flex-row justify-between items-center gap-6 sm:gap-8 lg:gap-20 bg-[#0E1330]/95 border-2 border-[#282D45] p-4 sm:p-8 lg:p-16 relative overflow-hidden"
             >
                 <Image
                     src={shaddow}
@@ -189,7 +189,7 @@ export default function OurServicesComponents() {
                     </div>
                 </div>
 
-                <figure className="relative w-1/2 max-lg:w-full max-sm:w-[513px] h-[300px] max-lg:h-[390px] order-1 lg:order-2 rounded-3xl overflow-hidden">
+                <figure className="relative w-1/2 max-lg:w-full max-md:w-[530px] max-sm:w-full h-[300px] max-lg:h-[390px] max-md:h-[300px] order-1 lg:order-2 rounded-3xl overflow-hidden">
                     <Image
                         src={Mobile}
                         alt="Mobile app development portfolio showing iOS and Android applications with modern UI design and cross-platform compatibility"
@@ -197,7 +197,7 @@ export default function OurServicesComponents() {
                         loading="lazy"
                         quality={85}
                         placeholder="blur"
-                        className="object-cover max-md:object-contain rounded-3xl hover:scale-120 duration-500"
+                        className="object-cover rounded-3xl hover:scale-120 duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     />
                 </figure>
