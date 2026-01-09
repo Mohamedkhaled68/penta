@@ -234,7 +234,7 @@ export default function PrivacyPolicyPage() {
                 <p className="leading-relaxed">
                   If you have questions or concerns about this Privacy Policy, please reach out to us at:
                 </p>
-                <div className="space-y-0 ml-6">
+                <div className="space-y-0 ml-4">
                   <p className="leading-relaxed mb-2">
                     <a href="mailto:penta.studioo@gmail.com" className="text-[#29E68C] hover:underline">
                       penta.studioo@gmail.com
