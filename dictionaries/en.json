@@ -63,7 +63,8 @@
                 "title": "Web Development",
                 "description": "Our team delivers modern, scalable, and secure websites that don’t just look good, they perform. From corporate sites to e-commerce platforms, we build web solutions that are SEO-friendly, responsive, and optimized for growth and reliability."
             }
-        ]
+        ],
+        "substitleforButton": "Your next big product starts here — let`s build it together."
     },
     "ourProcess": {
         "title": "Our Process",
@@ -81,6 +82,18 @@
             {
                 "title": "Design",
                 "description": "Create wireframes, prototypes, and user-tested interfaces to ensure usability from day one."
+            },
+            {
+                "title": "Development",
+                "description": "Agile sprints with weekly demos, CI/CD, and strong QA to deliver high-quality software."
+            },
+            {
+                "title": "Launch",
+                "description": "Deploy securely, monitor performance, and support a smooth transition to production."
+            },
+            {
+                "title": "Post-Launch Growth",
+                "description": "We provide continuous updates, scaling strategies, and feature enhancements to keep your product ahead."
             }
         ]
     },

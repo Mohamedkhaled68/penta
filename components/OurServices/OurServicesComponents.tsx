@@ -16,6 +16,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function OurServicesComponents() {
     const dictionary = useDictionary();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { lang } = useLanguage();
     return (
         <div className="grid grid-cols-2 max-sm:gap-8 max-lg:gap-6 gap-5 mx-auto px-0">
@@ -322,14 +323,14 @@ export default function OurServicesComponents() {
                 aria-label="Call to action section"
             >
                 <h4 className="bg-gradient-to-t from-[#29E68C] via-[#29E68C] to-[#F6F6F7] bg-clip-text text-transparent font-bold text-lg sm:text-xl xl:text-3xl text-center sm:text-left">
-                    Your next big product starts here — let&apos;s build it together.
+                    {dictionary?.ourServices?.substitleforButton}
                 </h4>
                 <Link
                     href="/about/#contact"
                     className="w-1/3 sm:w-[120px] lg:w-[140px] h-[42px] lg:h-[48px] bg-[#29E68C] hover:bg-[#4FF0A3] text-[#070707] text-sm sm:text-base font-medium cursor-pointer rounded-[36px] transition-colors duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px] flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-[#29E68C]"
                     aria-label="Contact Penta Studio to start your development project"
                 >
-                    Get Started
+                    {dictionary?.hero.startBtn}
                 </Link>
             </AnimateOnView>
         </div>
