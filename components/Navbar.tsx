@@ -125,7 +125,7 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`max-lg:hidden mt-6 flex justify-between items-center fixed top-0 left-0 right-0 z-50 h-[70px] px-8 w-11/12 mx-auto rounded-4xl transition-all duration-500 ${
+            className={`font-plex-regular max-lg:hidden mt-6 flex justify-between items-center fixed top-0 left-0 right-0 z-50 h-[70px] px-8 w-11/12 mx-auto rounded-4xl transition-all duration-500 ${
                 isScrolled
                     ? "bg-[#0E2334]/30 backdrop-blur-3xl"
                     : "bg-transparent"

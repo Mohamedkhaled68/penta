@@ -53,7 +53,7 @@ export default function HomeHero() {
               }`}
                     >
                         <span
-                            className="block bg-gradient-to-b from-[#F6F6F7] via-[#F6F6F7] to-[#29E68C] bg-clip-text text-transparent"
+                            className="block  bg-gradient-to-b from-[#F6F6F7] via-[#F6F6F7] to-[#29E68C] bg-clip-text text-transparent"
                             style={{
                                 WebkitBackgroundClip: "text",
                                 WebkitTextFillColor: "transparent",

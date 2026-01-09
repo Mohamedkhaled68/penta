@@ -23,7 +23,7 @@ export default function Footer() {
 
     return (
         <footer
-            className="bg-[#0F202E] w-full min-h-[540px] max-md:min-h-auto flex flex-col max-md:gap-5 justify-between p-16 max-md:p-6 max-md:py-12 pb-5"
+            className=" font-plex-regular bg-[#0F202E] w-full min-h-[540px] max-md:min-h-auto flex flex-col max-md:gap-5 justify-between p-16 max-md:p-6 max-md:py-12 pb-5"
             role="contentinfo"
             aria-label="Site footer with contact information and navigation"
         >
@@ -201,7 +201,7 @@ export default function Footer() {
                         {/* Location */}
                         <div className="flex flex-col gap-4 max-md:items-center max-sm:items-start max-sm:ml-2">
                             <h3 className="text-white text-lg">
-                                {dictionary?.footer?.location || "Location"}
+                                {dictionary?.footer?.location}
                             </h3>
                             <div className="flex items-center gap-3 max-md:justify-center max-sm:ml-4">
                                 <MapPin
@@ -240,27 +240,25 @@ export default function Footer() {
                 <div className="text-[#8F9BB7] text-base max-md:text-sm max-md:text-center max-md:w-11/12 max-md:mx-auto max-md:order-2">
                     <span itemScope itemType="https://schema.org/Organization">
                         © {currentYear}{" "}
-                        <span itemProp="name">Penta Studio</span>. All rights
-                        reserved.
+                        <span itemProp="name">Penta Studio</span>. {dictionary?.footer?.footer_text}
                     </span>
-                    <br className="max-md:hidden" />
-                    <span className="max-md:hidden"> •</span>
+                    <span className="max-md:hidden"> • </span>
                     <Link
                         href={`/${lang}/privacy-policy`}
                         className="hover:text-[#29E68B] transition-colors ml-1 max-md:ml-0 max-md:inline-block max-md:mt-2"
                         aria-label="Read our privacy policy"
                         title="Penta Studio Privacy Policy"
                     >
-                        Privacy Policy
+                        {dictionary?.footer?.privacy}
                     </Link>
-                    <span className="max-md:hidden"> •</span>
+                    <span className="max-md:hidden"> • </span>
                     <Link
                         href={`/${lang}/terms-of-service`}
                         className="hover:text-[#29E68B] transition-colors ml-1 max-md:ml-4"
                         aria-label="Read our terms of service"
                         title="Penta Studio Terms of Service"
                     >
-                        Terms of Service
+                        {dictionary?.footer?.terms}
                     </Link>
                 </div>
 

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import Script from "next/script";
 import ClientLayout from "@/components/ClientLayout";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import "./globals.css";
 
 type Params = Promise<{ lang: string }>;
 

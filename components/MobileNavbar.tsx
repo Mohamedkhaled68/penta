@@ -88,7 +88,7 @@ export default function MobileNavbar() {
     return (
         <div className="lg:hidden">
             {/* Top Bar */}
-            <div className="mt-5 flex justify-between items-center fixed top-0 left-0 right-0 z-50 h-[60px] px-6 w-11/12 mx-auto rounded-4xl transition-all duration-500 bg-[#0E2334]/30 backdrop-blur-3xl mb-10">
+            <div className=" font-plex-regular mt-5 flex justify-between items-center fixed top-0 left-0 right-0 z-50 h-[60px] px-6 w-11/12 mx-auto rounded-4xl transition-all duration-500 bg-[#0E2334]/30 backdrop-blur-3xl mb-10">
                 <div className="flex items-center gap-3">
                     <Image src={logo} alt="penta logo" className="h-9 w-9" />
                     <Image src={Penta} alt="penta" className="h-[82px] w-[80px]" />

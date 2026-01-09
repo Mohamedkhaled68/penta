@@ -23,8 +23,11 @@
         "about": "About",
         "blog": "Blog",
         "contact": "Contact Us",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
         "input_placeholder": "Enter your email",
-        "location": "Location"
+        "location": "Location",
+        "footer_text": "All rights reserved."
     },
     "hero": {
         "heading": {
@@ -131,7 +134,32 @@
         },
         "section3": {
             "title": "Ready to Build Something Remarkable?",
-            "description": "Whether you're launching a digital product or transforming internal workflows, our team is ready to bring your vision to life."
+            "description": "Whether you're launching a digital product or transforming internal workflows, our team is ready to bring your vision to life.",
+            "form": {
+                "first_name_label": "First Name",
+                "last_name_label": "Last Name",
+                "phone_label": "Phone Number",
+                "email_label": "Email",
+                "message_label": "Message",
+                "first_name_placeholder": "Enter First Name",
+                "last_name_placeholder": "Enter Last Name",
+                "phone_placeholder": "Enter Phone Number",
+                "email_placeholder": "Enter Email",
+                "message_placeholder": "Enter your Message",
+                "submit_btn": "Send",
+                "agree_text": "I agree with Terms of Use and Privacy Policy",
+                "submitting_btn": "Sending...",
+                "errors": {
+                    "first_name_required": "First name must be at least 2 characters",
+                    "last_name_required": "Last name must be at least 2 characters",
+                    "email_invalid": "Please enter a valid email address",
+                    "phone_required": "Phone number must be at least 10 digits",
+                    "message_required": "Message must be at least 10 characters",
+                    "terms_required": "You must agree to the Terms of Use and Privacy Policy"
+                },
+                "success_message": "Message sent successfully! We'll get back to you soon.",
+                "error_message": "Failed to send message. Please try again."
+            }
         }
     }
 }

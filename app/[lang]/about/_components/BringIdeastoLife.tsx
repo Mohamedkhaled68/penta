@@ -46,23 +46,28 @@ export default function BringIdeastoLife() {
         const newErrors: FormErrors = {};
 
         if (!formData.firstName || formData.firstName.length < 2) {
-            newErrors.firstName = "First name must be at least 2 characters";
+            newErrors.firstName =
+                dictionary?.about_page?.section3?.form?.errors?.first_name_required;
         }
         if (!formData.lastName || formData.lastName.length < 2) {
-            newErrors.lastName = "Last name must be at least 2 characters";
+            newErrors.lastName =
+                dictionary?.about_page?.section3?.form?.errors?.last_name_required;
         }
         if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
-            newErrors.email = "Please enter a valid email address";
+            newErrors.email =
+                dictionary?.about_page?.section3?.form?.errors?.email_invalid;
         }
         if (!formData.phoneNumber || formData.phoneNumber.length < 10) {
-            newErrors.phoneNumber = "Phone number must be at least 10 digits";
+            newErrors.phoneNumber =
+                dictionary?.about_page?.section3?.form?.errors?.phone_required;
         }
         if (!formData.message || formData.message.length < 10) {
-            newErrors.message = "Message must be at least 10 characters";
+            newErrors.message =
+                dictionary?.about_page?.section3?.form?.errors?.message_required;
         }
         if (!formData.agreeToTerms) {
             newErrors.agreeToTerms =
-                "You must agree to the Terms of Use and Privacy Policy";
+                dictionary?.about_page?.section3?.form?.errors?.terms_required;
         }
 
         setErrors(newErrors);
@@ -156,7 +161,10 @@ export default function BringIdeastoLife() {
                             htmlFor="firstName"
                             className="block text-white font-medium mb-4"
                         >
-                            First Name
+                            {
+                                dictionary?.about_page?.section3?.form
+                                    ?.first_name_label
+                            }
                         </label>
                         <input
                             type="text"
@@ -164,7 +172,10 @@ export default function BringIdeastoLife() {
                             name="firstName"
                             value={formData.firstName}
                             onChange={handleInputChange}
-                            placeholder="Enter First Name"
+                            placeholder={
+                                dictionary?.about_page?.section3?.form
+                                    ?.first_name_placeholder
+                            }
                             className="w-full bg-[#0E1330] border border-[#151934] rounded-lg px-4 py-4 text-[#8F9BB7] placeholder-[#8F9BB7] focus:outline-none focus:border-[#29E68C] transition-colors"
                         />
                         {errors.firstName && (
@@ -179,7 +190,10 @@ export default function BringIdeastoLife() {
                             htmlFor="lastName"
                             className="block text-white font-medium mb-4"
                         >
-                            Last Name
+                            {
+                                dictionary?.about_page?.section3?.form
+                                    ?.last_name_label
+                            }
                         </label>
                         <input
                             type="text"
@@ -187,7 +201,10 @@ export default function BringIdeastoLife() {
                             name="lastName"
                             value={formData.lastName}
                             onChange={handleInputChange}
-                            placeholder="Enter Last Name"
+                            placeholder={
+                                dictionary?.about_page?.section3?.form
+                                    ?.last_name_placeholder
+                            }
                             className="w-full bg-[#0E1330] border border-[#151934] rounded-lg px-4 py-4 text-[#8F9BB7] placeholder-[#8F9BB7] focus:outline-none focus:border-[#29E68C] transition-colors"
                         />
                         {errors.lastName && (
@@ -205,7 +222,10 @@ export default function BringIdeastoLife() {
                             htmlFor="email"
                             className="block text-white font-medium mb-4"
                         >
-                            Email
+                            {
+                                dictionary?.about_page?.section3?.form
+                                    ?.email_label
+                            }
                         </label>
                         <input
                             type="email"
@@ -213,7 +233,10 @@ export default function BringIdeastoLife() {
                             name="email"
                             value={formData.email}
                             onChange={handleInputChange}
-                            placeholder="Enter your Email"
+                            placeholder={
+                                dictionary?.about_page?.section3?.form
+                                    ?.email_placeholder
+                            }
                             className="w-full bg-[#0E1330] border border-[#151934] rounded-lg px-4 py-4 text-[#8F9BB7] placeholder-[#8F9BB7] focus:outline-none focus:border-[#29E68C] transition-colors"
                         />
                         {errors.email && (
@@ -228,7 +251,10 @@ export default function BringIdeastoLife() {
                             htmlFor="phoneNumber"
                             className="block text-white font-medium mb-4"
                         >
-                            Phone Number
+                            {
+                                dictionary?.about_page?.section3?.form
+                                    ?.phone_label
+                            }
                         </label>
                         <div className="flex">
                             <div className="bg-[#0E1330] border border-[#151934] rounded-l-lg px-3 py-4 flex items-center border-r-0">
@@ -251,7 +277,10 @@ export default function BringIdeastoLife() {
                                 name="phoneNumber"
                                 value={formData.phoneNumber}
                                 onChange={handleInputChange}
-                                placeholder="Enter Phone Number"
+                                placeholder={
+                                    dictionary?.about_page?.section3?.form
+                                        ?.phone_placeholder
+                                }
                                 className="flex-1 bg-[#0E1330] border border-[#151934] rounded-r-lg px-4 py-4 text-[#8F9BB7] placeholder-[#8F9BB7] focus:outline-none focus:border-[#29E68C] transition-colors"
                             />
                         </div>
@@ -269,7 +298,7 @@ export default function BringIdeastoLife() {
                         htmlFor="message"
                         className="block text-white font-medium mb-4"
                     >
-                        Message
+                        {dictionary?.about_page?.section3?.form?.message_label}
                     </label>
                     <textarea
                         id="message"
@@ -277,7 +306,10 @@ export default function BringIdeastoLife() {
                         value={formData.message}
                         onChange={handleInputChange}
                         rows={6}
-                        placeholder="Enter your Message"
+                        placeholder={
+                            dictionary?.about_page?.section3?.form
+                                ?.message_placeholder
+                        }
                         className="w-full h-[136px] bg-[#0E1330] border border-[#151934] rounded-lg px-4 py-4 text-[#8F9BB7] placeholder-[#8F9BB7] focus:outline-none focus:border-[#29E68C] transition-colors resize-none"
                     />
                     {errors.message && (
@@ -306,20 +338,10 @@ export default function BringIdeastoLife() {
                                 )}
                             </div>
                             <label htmlFor="agreeToTerms" className="text-sm">
-                                I agree with{" "}
-                                <a
-                                    href="#"
-                                    className="text-white font-bold hover:text-[#29E68C]"
-                                >
-                                    Terms of Use
-                                </a>{" "}
-                                and{" "}
-                                <a
-                                    href="#"
-                                    className="text-white font-bold hover:text-[#29E68C]"
-                                >
-                                    Privacy Policy
-                                </a>
+                                {
+                                    dictionary?.about_page?.section3?.form
+                                        ?.agree_text
+                                }
                             </label>
                         </div>
                         {errors.agreeToTerms && (
@@ -336,7 +358,11 @@ export default function BringIdeastoLife() {
                             disabled={isSubmitting}
                             className="w-[137px] max-md:w-full h-[50px] bg-[#29E68C] hover:bg-[#4FF0A3] text-[#070707] text-base font-medium cursor-pointer rounded-[8px] transition-colors duration-300 ease-in-out hover:shadow-lg flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-[#29E68C] focus:ring-offset-2 focus:ring-offset-transparent"
                         >
-                            {isSubmitting ? "Sending..." : "Send"}
+                            {isSubmitting
+                                ? dictionary?.about_page?.section3?.form
+                                      ?.submitting_btn
+                                : dictionary?.about_page?.section3?.form
+                                      ?.submit_btn}
                         </button>
                     </div>
                 </div>
@@ -347,13 +373,17 @@ export default function BringIdeastoLife() {
                 {/* Status Messages */}
                 {submitStatus === "success" && (
                     <div className="text-[#29E68C] text-center mt-4">
-                        ✅ Message sent successfully! We&apos;ll get back to you
-                        soon.
+                        ✅{" "}
+                        {
+                            dictionary?.about_page?.section3?.form
+                                ?.success_message
+                        }
                     </div>
                 )}
                 {submitStatus === "error" && (
                     <div className="text-red-400 text-center mt-4">
-                        ❌ Failed to send message. Please try again.
+                        ❌{" "}
+                        {dictionary?.about_page?.section3?.form?.error_message}
                     </div>
                 )}
             </AnimateOnView>
