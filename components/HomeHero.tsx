@@ -94,7 +94,7 @@ export default function HomeHero() {
                     aria-label="Main call-to-action buttons"
                 >
                     <Link
-                        href="/contact"
+                        href="#services"
                         className="w-[120px] max-md:w-full h-[46px] bg-[#29E68C] hover:bg-[#4FF0A3] text-[#070707] text-base font-medium cursor-pointer rounded-[36px] transition-colors duration-300 ease-in-out hover:shadow-lg flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-[#29E68C] focus:ring-offset-2 focus:ring-offset-transparent"
                         aria-label="Start your project with Penta Studio"
                     >
