@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import Link from "next/link";
 import Management from "@/public/OurServices/MANG.webp";
 import Devops from "@/public/OurServices/Devops.webp";
 import AI from "@/public/OurServices/ai.webp";
@@ -13,6 +12,7 @@ import rightshadoow from "@/public/OurServices/rightshadoow.svg";
 import { AnimateOnView } from "../global components/AnimateOnView"; // import the wrapper
 import { useDictionary } from "@/hooks/useDictionary";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { HoverButton } from "../global components/HoverButton";
 
 export default function OurServicesComponents() {
     const dictionary = useDictionary();
@@ -325,13 +325,13 @@ export default function OurServicesComponents() {
                 <h4 className="bg-gradient-to-t from-[#29E68C] via-[#29E68C] to-[#F6F6F7] bg-clip-text text-transparent font-bold text-lg sm:text-xl xl:text-3xl text-center sm:text-left">
                     {dictionary?.ourServices?.substitleforButton}
                 </h4>
-                <Link
+                <HoverButton
                     href="/about/#contact"
-                    className="w-1/3 sm:w-[120px] lg:w-[140px] h-[42px] lg:h-[48px] bg-[#29E68C] hover:bg-[#4FF0A3] text-[#070707] text-sm sm:text-base font-medium cursor-pointer rounded-[36px] transition-colors duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px] flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-[#29E68C]"
+                    className="w-1/3 sm:w-[120px] lg:w-[140px] h-[42px] lg:h-[48px] bg-[#29E68C] text-[#060B27] border-[0.5px] border-[#29E68B] text-sm sm:text-base font-medium cursor-pointer rounded-[36px] transition-colors duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px] flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-[#29E68C]"
                     aria-label="Contact Penta Studio to start your development project"
                 >
                     {dictionary?.hero.startBtn}
-                </Link>
+                </HoverButton>
             </AnimateOnView>
         </div>
     );

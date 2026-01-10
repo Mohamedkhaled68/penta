@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useDictionary } from "@/hooks/useDictionary";
+import { HoverButton } from "@/components/global components/HoverButton";
 import { useParams } from "next/navigation";
 import toast from "react-hot-toast";
 
@@ -90,7 +91,7 @@ export default function Footer() {
                                     dictionary?.footer?.input_placeholder ||
                                     "Enter your email"
                                 }
-                                className="bg-[#052E1A] border-[1px] border-[#29E68B] rounded-lg px-6 py-3 text-white focus:outline-none focus:ring-[1px] focus:ring-[#29E68B] w-80 max-md:w-11/12 max-md:mx-auto"
+                                className="bg-[#052E1A] border-[0.5px] border-[#29E68B] rounded-[36px] px-4 py-3 text-white focus:outline-none focus:ring-[0.5px] focus:ring-[#29E68B] w-80 max-md:w-11/12 max-md:mx-auto"
                                 aria-describedby="email-description"
                                 required
                             />
@@ -99,14 +100,14 @@ export default function Footer() {
                                 Studio&apos;s web design and development
                                 services
                             </p>
-                            <button
+                            <HoverButton
                                 type="submit"
                                 disabled={isSubmittingNewsletter}
-                                className="w-[120px] max-md:w-[40%] max-md:mx-auto h-[46px] bg-[#29E68C] hover:bg-[#4FF0A3] text-[#070707] text-base font-medium cursor-pointer rounded-[36px] transition-all duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px] max-sm:mt-3"
+                                className="w-[120px] max-md:w-[40%] max-md:mx-auto h-[46px] bg-[#29E68C] text-[#060B27] border-[0.5px] border-[#29E68B] text-base font-medium cursor-pointer rounded-[36px] transition-all duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px] max-sm:mt-3"
                                 aria-label="Subscribe to Penta Studio newsletter"
                             >
                                 {isSubmittingNewsletter ? (dictionary?.footer?.subscribing || "Subscribing...") : (dictionary?.footer?.subscribe_button || "Subscribe")}
-                            </button>
+                            </HoverButton>
                         </form>
                     </section>
 

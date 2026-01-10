@@ -3,11 +3,11 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import logo from "@/public/Logo.svg";
 import Penta from "@/public/Penta.svg";
-import Contact from "@/public/Icons/Contact.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import LanguagesSelector from "./LanguagesSelector";
 import { useDictionary } from "@/hooks/useDictionary";
+import { HoverButton } from "@/components/global components/HoverButton";
 
 export default function Navbar() {
     const [activeSection, setActiveSection] = useState<string>("home");
@@ -107,29 +107,26 @@ export default function Navbar() {
 
     const getNavButtonClass = (sectionId: string): string => {
         const isActive = activeSection === sectionId && pathname === "/";
-        return `text-base transition-all duration-300 ease-in-out cursor-pointer relative ${
-            isActive
-                ? "text-[#29E68C] font-medium"
-                : "text-[#8F9BB7] font-medium"
-        }`;
+        return `text-base transition-all duration-300 ease-in-out cursor-pointer relative ${isActive
+            ? "text-[#29E68C] font-medium"
+            : "text-[#8F9BB7] font-medium"
+            }`;
     };
 
     const getLinkClass = (href: string): string => {
         const isActive = pathname === href;
-        return `text-base transition-all duration-300 ease-in-out relative ${
-            isActive
-                ? "text-[#29E68C] font-medium"
-                : "text-[#8F9BB7] font-medium"
-        }`;
+        return `text-base transition-all duration-300 ease-in-out relative ${isActive
+            ? "text-[#29E68C] font-medium"
+            : "text-[#8F9BB7] font-medium"
+            }`;
     };
 
     return (
         <nav
-            className={`font-plex-regular max-lg:hidden mt-6 flex justify-between items-center fixed top-0 left-0 right-0 z-50 h-[70px] px-8 w-11/12 mx-auto rounded-4xl transition-all duration-500 ${
-                isScrolled
-                    ? "bg-[#0E2334]/30 backdrop-blur-3xl"
-                    : "bg-transparent"
-            } mb-10`}
+            className={`font-plex-regular max-lg:hidden mt-6 flex justify-between items-center fixed top-0 left-0 right-0 z-50 h-[70px] px-8 w-11/12 mx-auto rounded-4xl transition-all duration-500 ${isScrolled
+                ? "bg-[#0E2334]/30 backdrop-blur-3xl"
+                : "bg-transparent"
+                } mb-10`}
         >
             {/* Logo */}
             <div className="flex gap-2 items-center">
@@ -208,22 +205,23 @@ export default function Navbar() {
                 </Link> */}
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex justify-center items-center gap-4">
                 <LanguagesSelector />
                 {/* Contact Button */}
-                <div className="h-[50px] w-[136px] flex justify-center items-center">
-                    <a
+                <div className="w-[120px] h-[40px]">
+                    <HoverButton
+                        as="a"
                         href="https://wa.me/0201551850855"
                         target="_blank"
-                        className="w-[120px] h-[40px] bg-[#29E68C] hover:bg-[#4FF0A3] text-[#070707] text-base font-medium cursor-pointer rounded-[36px] transition-all duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px]"
+                        className="w-[120px] h-[40px] bg-[#29E68C] text-[#060B27] border-[0.5px] border-[#29E68B] text-base font-medium cursor-pointer rounded-[36px] transition-all duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px]"
                     >
                         {dictionary?.navbar.contact}
-                        <Image
+                        {/* <Image
                             src={Contact}
                             alt="Contact with penta team"
                             className="h-4 w-4"
-                        />
-                    </a>
+                        /> */}
+                    </HoverButton>
                 </div>
             </div>
         </nav>

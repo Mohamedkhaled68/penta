@@ -9,6 +9,7 @@ import Image from "next/image";
 import { AnimateOnView } from "@/components/global components/AnimateOnView";
 import toast from "react-hot-toast";
 import { useDictionary } from "@/hooks/useDictionary";
+import { HoverButton } from "@/components/global components/HoverButton";
 
 // Custom Country Select Component
 // TypeScript interfaces
@@ -179,7 +180,7 @@ export default function BringIdeastoLife() {
 
     // API submission function with proper typing
     const handleSubmit = async (
-        e: FormEvent<HTMLButtonElement>
+        e: FormEvent<HTMLButtonElement> | React.MouseEvent<HTMLElement>
     ): Promise<void> => {
         e.preventDefault();
 
@@ -469,40 +470,20 @@ export default function BringIdeastoLife() {
                     </div>
 
                     <div className="flex justify-end ">
-                        <button
+                        <HoverButton
                             type="button"
                             onClick={handleSubmit}
                             disabled={isSubmitting}
-                            className="w-[137px] max-md:w-full h-[50px] bg-[#29E68C] hover:bg-[#4FF0A3] text-[#070707] text-base font-medium cursor-pointer rounded-[8px] transition-colors duration-300 ease-in-out hover:shadow-lg flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-[#29E68C] focus:ring-offset-2 focus:ring-offset-transparent"
+                            className="w-[120px] max-md:w-full h-[40px] bg-[#29E68C] text-[#060B27] border-[0.5px] border-[#29E68B] text-base font-medium cursor-pointer rounded-2xl transition-colors duration-300 ease-in-out hover:shadow-lg flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-[#29E68C] focus:ring-offset-2 focus:ring-offset-transparent"
                         >
                             {isSubmitting
                                 ? dictionary?.about_page?.section3?.form
                                     ?.submitting_btn
                                 : dictionary?.about_page?.section3?.form
                                     ?.submit_btn}
-                        </button>
+                        </HoverButton>
                     </div>
                 </div>
-                {/* Terms Checkbox */}
-
-                {/* Submit Button */}
-
-                {/* Status Messages */}
-                {/* {submitStatus === "success" && (
-                    <div className="text-[#29E68C] text-center mt-4">
-                        ✅{" "}
-                        {
-                            dictionary?.about_page?.section3?.form
-                                ?.success_message
-                        }
-                    </div>
-                )}
-                {submitStatus === "error" && (
-                    <div className="text-red-400 text-center mt-4">
-                        ❌{" "}
-                        {dictionary?.about_page?.section3?.form?.error_message}
-                    </div>
-                )} */}
             </AnimateOnView>
         </section>
     );
