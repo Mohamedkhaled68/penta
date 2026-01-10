@@ -9,6 +9,7 @@ interface ContactFormData {
     lastName: string;
     email: string;
     phoneNumber: string;
+    country: string;
     message: string;
     agreeToTerms: boolean;
 }
@@ -16,7 +17,7 @@ interface ContactFormData {
 export async function POST(req: NextRequest) {
     try {
         const body: ContactFormData = await req.json();
-        const { firstName, lastName, email, phoneNumber, message, agreeToTerms } = body;
+        const { firstName, lastName, email, phoneNumber, country, message, agreeToTerms } = body;
 
         if (!firstName || !lastName || !email || !phoneNumber || !message) {
             return NextResponse.json(
@@ -105,7 +106,7 @@ export async function POST(req: NextRequest) {
                                                                <tr>
                                                                 <td width="100%">
                                                                     <p style="color: #8B92A7; font-size: 11px; font-weight: 600; text-transform: uppercase; margin: 0 0 8px 0;">Phone</p>
-                                                                    <a href="tel:${phoneNumber}" style="color: #29E68C; font-size: 15px; text-decoration: none;">${phoneNumber}</a>
+                                                                    <a href="tel:${phoneNumber}" style="color: #29E68C; font-size: 15px; text-decoration: none;">${phoneNumber} from ${country}</a>
                                                                 </td>
                                                             </tr>
                                                         </table>

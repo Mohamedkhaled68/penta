@@ -88,6 +88,7 @@ interface FormData {
     lastName: string;
     email: string;
     phoneNumber: string;
+    country: string;
     message: string;
     agreeToTerms: boolean;
 }
@@ -107,6 +108,7 @@ export default function BringIdeastoLife() {
         lastName: "",
         email: "",
         phoneNumber: "",
+        country: "EG",
         message: "",
         agreeToTerms: false,
     });
@@ -178,6 +180,15 @@ export default function BringIdeastoLife() {
         }
     };
 
+    const handleCountryChange = (country: string | undefined): void => {
+        if (country) {
+            setFormData((prev) => ({
+                ...prev,
+                country: country,
+            }));
+        }
+    };
+
     // API submission function with proper typing
     const handleSubmit = async (
         e: FormEvent<HTMLButtonElement> | React.MouseEvent<HTMLElement>
@@ -205,6 +216,7 @@ export default function BringIdeastoLife() {
                 lastName: '',
                 email: '',
                 phoneNumber: '',
+                country: 'EG',
                 message: '',
                 agreeToTerms: false,
             });
@@ -395,6 +407,7 @@ export default function BringIdeastoLife() {
                             defaultCountry="EG"
                             value={formData.phoneNumber}
                             onChange={handlePhoneChange}
+                            onCountryChange={handleCountryChange}
                             placeholder={
                                 dictionary?.about_page?.section3?.form
                                     ?.phone_placeholder
