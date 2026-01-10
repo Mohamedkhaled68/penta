@@ -94,7 +94,7 @@ export default function HomeHero() {
                     <HoverButton
                         as={Link}
                         href="#services"
-                        className="w-[120px] max-md:w-2/3 h-[46px] bg-[#29E68C] text-[#060B27] border-[0.5px] border-[#29E68B] text-base font-medium cursor-pointer rounded-[36px] transition-colors duration-300 ease-in-out hover:shadow-lg flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-[#29E68C] focus:ring-offset-2 focus:ring-offset-transparent"
+                        className="w-[120px] max-md:w-2/3 h-[46px] bg-[#29E68C] text-[#060B27] border-[0.5px] border-[#29E68B] text-base font-medium cursor-pointer rounded-[36px] transition-colors duration-300 ease-in-out hover:shadow-lg flex justify-center items-center focus:outline-none ring-0 focus:ring-offset-2 focus:ring-offset-transparent"
                         aria-label="Start your project with Penta Studio"
                     >
                         {dictionary?.hero.startBtn}
@@ -102,7 +102,7 @@ export default function HomeHero() {
                     <HoverButton
                         as={Link}
                         href="/about"
-                        className="w-[171px] max-md:w-2/3 h-[46px] bg-[#15193485] border-[0.5px] border-[#15193485] text-[#F6F6F7] text-base font-medium cursor-pointer rounded-[36px] transition-colors duration-300 ease-in-out hover:shadow-lg flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-[#282D45] focus:ring-offset-2 focus:ring-offset-transparent"
+                        className="w-[171px] max-md:w-2/3 h-[46px] bg-[#15193485] border-[0.5px] border-[#15193485] text-[#F6F6F7] text-base font-medium cursor-pointer rounded-[36px] transition-colors duration-300 ease-in-out hover:shadow-lg flex justify-center items-center focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-offset-transparent"
                         aria-label="Learn more about Penta Studio company profile"
                     >
                         {dictionary?.hero.companyProfileBtn}
