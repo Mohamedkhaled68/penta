@@ -8,12 +8,14 @@ import { usePathname } from "next/navigation";
 import LanguagesSelector from "./LanguagesSelector";
 import { useDictionary } from "@/hooks/useDictionary";
 import { HoverButton } from "@/components/global components/HoverButton";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Navbar() {
     const [activeSection, setActiveSection] = useState<string>("home");
     const [isScrolled, setIsScrolled] = useState<boolean>(false);
     const pathname = usePathname();
     const dictionary = useDictionary();
+    const lang  = pathname.includes("/ar") ? { language: "ar" } : { language: "en" };
 
     //   const scrollToSection = (sectionId: string): void => {
     //     const element = document.getElementById(sectionId);
@@ -107,26 +109,33 @@ export default function Navbar() {
 
     const getNavButtonClass = (sectionId: string): string => {
         const isActive = activeSection === sectionId && pathname === "/";
-        return `text-base transition-all duration-300 ease-in-out cursor-pointer relative ${isActive
-            ? "text-[#29E68C] font-medium"
-            : "text-[#8F9BB7] font-medium"
-            }`;
+        return `text-base transition-all duration-300 ease-in-out cursor-pointer relative ${
+            isActive
+                ? "text-[#29E68C] font-medium"
+                : "text-[#8F9BB7] font-medium"
+        }`;
     };
 
     const getLinkClass = (href: string): string => {
         const isActive = pathname === href;
-        return `text-base transition-all duration-300 ease-in-out relative ${isActive
-            ? "text-[#29E68C] font-medium"
-            : "text-[#8F9BB7] font-medium"
-            }`;
+        return `text-base transition-all duration-300 ease-in-out relative ${
+            isActive
+                ? "text-[#29E68C] font-medium"
+                : "text-[#8F9BB7] font-medium"
+        }`;
     };
 
     return (
         <nav
-            className={`font-plex-regular max-lg:hidden mt-6 flex justify-between items-center fixed top-0 left-0 right-0 z-50 h-[70px] px-8 w-11/12 mx-auto rounded-4xl transition-all duration-500 ${isScrolled
-                ? "bg-[#0E2334]/30 backdrop-blur-3xl"
-                : "bg-transparent"
-                } mb-10`}
+            className={` max-lg:hidden mt-6 flex justify-between items-center fixed top-0 left-0 right-0 z-50 h-[70px] px-8 w-11/12 mx-auto rounded-4xl transition-all duration-500 ${
+                isScrolled
+                    ? "bg-[#0E2334]/30 backdrop-blur-3xl"
+                    : "bg-transparent"
+            } mb-10`}
+            style={{
+                fontFamily:
+                    lang.language === "ar" ? "plex-regular" : "Satoshi-VariableItalic",
+            }}
         >
             {/* Logo */}
             <div className="flex gap-2 items-center">

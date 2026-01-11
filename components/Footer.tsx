@@ -4,7 +4,6 @@ import React, { useState, FormEvent } from "react";
 import logo from "@/public/Logo.svg";
 import Penta from "@/public/Penta.svg";
 import {
-    Facebook,
     Instagram,
     Linkedin,
     MailIcon,
@@ -25,7 +24,8 @@ export default function Footer() {
 
     // Add state for newsletter form
     const [newsletterEmail, setNewsletterEmail] = useState<string>("");
-    const [isSubmittingNewsletter, setIsSubmittingNewsletter] = useState<boolean>(false);
+    const [isSubmittingNewsletter, setIsSubmittingNewsletter] =
+        useState<boolean>(false);
 
     // Handle newsletter form submission
     const handleNewsletterSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -39,19 +39,25 @@ export default function Footer() {
         setIsSubmittingNewsletter(true);
 
         try {
-            const response = await fetch('/api/newsletter', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+            const response = await fetch("/api/newsletter", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email: newsletterEmail }),
             });
 
-            if (!response.ok) throw new Error('Failed to subscribe');
+            if (!response.ok) throw new Error("Failed to subscribe");
 
-            toast.success(dictionary?.footer?.newsletter?.toast?.success || "Thank you for subscribing! We'll keep you updated.");
+            toast.success(
+                dictionary?.footer?.newsletter?.toast?.success ||
+                    "Thank you for subscribing! We'll keep you updated."
+            );
             setNewsletterEmail("");
         } catch (error) {
-            console.error('Error subscribing to newsletter:', error);
-            toast.error(dictionary?.footer?.newsletter?.toast?.error || "Failed to subscribe. Please try again.");
+            console.error("Error subscribing to newsletter:", error);
+            toast.error(
+                dictionary?.footer?.newsletter?.toast?.error ||
+                    "Failed to subscribe. Please try again."
+            );
         } finally {
             setIsSubmittingNewsletter(false);
         }
@@ -86,7 +92,9 @@ export default function Footer() {
                                 type="email"
                                 name="email"
                                 value={newsletterEmail}
-                                onChange={(e) => setNewsletterEmail(e.target.value)}
+                                onChange={(e) =>
+                                    setNewsletterEmail(e.target.value)
+                                }
                                 placeholder={
                                     dictionary?.footer?.input_placeholder ||
                                     "Enter your email"
@@ -106,7 +114,11 @@ export default function Footer() {
                                 className="w-[120px] max-md:w-[40%] max-md:mx-auto h-[46px] bg-[#29E68C] text-[#060B27] border-[0.5px] border-[#29E68B] text-base font-medium cursor-pointer rounded-[36px] transition-all duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px] max-sm:mt-3"
                                 aria-label="Subscribe to Penta Studio newsletter"
                             >
-                                {isSubmittingNewsletter ? (dictionary?.footer?.subscribing || "Subscribing...") : (dictionary?.footer?.subscribe_button || "Subscribe")}
+                                {isSubmittingNewsletter
+                                    ? dictionary?.footer?.subscribing ||
+                                      "Subscribing..."
+                                    : dictionary?.footer?.subscribe_button ||
+                                      "Subscribe"}
                             </HoverButton>
                         </form>
                     </section>
@@ -115,7 +127,7 @@ export default function Footer() {
                     <div className="flex gap-2 items-center max-md:justify-center">
                         <Image
                             src={logo}
-                            alt="Penta Studio logo - Web design and development agency in Cairo, Egypt"
+                            alt="Penta Studio logo - Web design and development agency in Oulu, Finland"
                             width={51}
                             height={40}
                             priority={false}
@@ -214,12 +226,12 @@ export default function Footer() {
                                     aria-hidden="true"
                                 />
                                 <a
-                                    href="tel:+201012473532"
+                                    href="https://wa.me/+358505300004"
                                     className="hover:text-[#29E68B] transition-colors text-white"
-                                    aria-label="Call Penta Studio at +02 015 51850855"
-                                    title="Phone: +0201551850855"
+                                    aria-label="Contact with Penta Studio at +358 50 5300004"
+                                    title="Phone: +358 50 5300004"
                                 >
-                                    +02 015 51850855
+                                    +358 50 5300004
                                 </a>
                             </div>
                             <div className="flex items-center gap-3 max-md:justify-center max-sm:ml-4">
@@ -228,12 +240,12 @@ export default function Footer() {
                                     aria-hidden="true"
                                 />
                                 <a
-                                    href="mailto:contact@penta.studio"
+                                    href="mailto:penta.studioo@gmail.com"
                                     className="hover:text-[#29E68B] transition-colors text-white"
-                                    aria-label="Email Penta Studio at contact@penta.studio"
-                                    title="Email: contact@penta.studio"
+                                    aria-label="Email Penta Studio at penta.studioo@gmail.com"
+                                    title="Email: penta.studioo@gmail.com"
                                 >
-                                    contact@penta.studio
+                                    penta.studioo@gmail.com
                                 </a>
                             </div>
                         </address>
@@ -248,8 +260,11 @@ export default function Footer() {
                                     className="w-5 h-5 text-[#29E68B]"
                                     aria-hidden="true"
                                 />
-                                <span
-                                    className="text-white hover:text-[#29E68B]"
+                                <a
+                                    href="https://maps.app.goo.gl/CCVDpdqJ6fTkoto5A"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-[#29E68B] transition-colors"
                                     itemScope
                                     itemType="https://schema.org/Organization"
                                 >
@@ -258,16 +273,23 @@ export default function Footer() {
                                         itemScope
                                         itemType="https://schema.org/PostalAddress"
                                     >
-                                        <span itemProp="addressLocality">
-                                            Cairo{" "}
+                                        <span itemProp="streetAddress">
+                                            Virkakatu 8J{" "}
                                         </span>
-                                        ,
+                                        ,{" "}
+                                        <span itemProp="postalCode">
+                                            90570{" "}
+                                        </span>
+                                        ,{" "}
+                                        <span itemProp="addressLocality">
+                                            Oulu{" "}
+                                        </span>
+                                        ,{" "}
                                         <span itemProp="addressCountry">
-                                            Egypt{" "}
+                                            Finland
                                         </span>
                                     </span>
-                                    <span> – Global Presence</span>
-                                </span>
+                                </a>
                             </div>
                         </div>
                     </section>
@@ -280,7 +302,8 @@ export default function Footer() {
                 <div className="text-[#8F9BB7] text-base max-md:text-sm max-md:text-center max-md:w-11/12 max-md:mx-auto max-md:order-2">
                     <span itemScope itemType="https://schema.org/Organization">
                         © {currentYear}{" "}
-                        <span itemProp="name">Penta Studio</span>. {dictionary?.footer?.footer_text}
+                        <span itemProp="name">Penta Studio</span>.{" "}
+                        {dictionary?.footer?.footer_text}
                     </span>
                     <span className="max-md:hidden"> • </span>
                     <Link
@@ -307,36 +330,19 @@ export default function Footer() {
                     <ul className="flex gap-4 max-md:gap-3 list-none max-md:justify-center">
                         <li className="group">
                             <a
-                                href="https://facebook.com/pentastudio"
+                                href="https://x.com/PentaStd"
                                 className="w-10 h-10 max-md:w-8 max-md:h-8 bg-[#060B27] border-[1px] border-[#282D45] rounded-lg flex items-center justify-center hover:bg-[#29E68B] transition-colors duration-200"
-                                aria-label="Follow Penta Studio on Facebook"
-                                title="Penta Studio on Facebook"
+                                aria-label="Follow Penta Studio on X (Twitter)"
+                                title="Penta Studio on X"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Facebook
-                                    className="w-6 h-6 max-md:w-4 max-md:h-4 text-[#29E68B] group-hover:text-[#060B27] transition-colors duration-200"
-                                    aria-hidden="true"
-                                />
+                                <Twitter className="w-6 h-6 max-md:w-4 max-md:h-4 text-[#29E68B] group-hover:text-[#060B27] transition-colors duration-200" />
                             </a>
                         </li>
                         <li className="group">
                             <a
-                                href="https://twitter.com/pentastudio"
-                                className="w-10 h-10 max-md:w-8 max-md:h-8 bg-[#060B27] border-[1px] border-[#282D45] rounded-lg flex items-center justify-center hover:bg-[#29E68B] transition-colors duration-200"
-                                aria-label="Follow Penta Studio on Twitter"
-                                title="Penta Studio on Twitter"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <Twitter
-                                    className="w-6 h-6 max-md:w-4 max-md:h-4 text-[#29E68B] group-hover:text-[#060B27] transition-colors duration-200"
-                                />
-                            </a>
-                        </li>
-                        <li className="group">
-                            <a
-                                href="https://linkedin.com/company/pentastudio"
+                                href="https://www.linkedin.com/company/penta-std/"
                                 className="w-10 h-10 max-md:w-8 max-md:h-8 bg-[#060B27] border-[1px] border-[#282D45] rounded-lg flex items-center justify-center hover:bg-[#29E68B] transition-colors duration-200"
                                 aria-label="Connect with Penta Studio on LinkedIn"
                                 title="Penta Studio on LinkedIn"
@@ -351,7 +357,7 @@ export default function Footer() {
                         </li>
                         <li className="group">
                             <a
-                                href="https://instagram.com/pentastudio"
+                                href="https://www.instagram.com/pentastd/"
                                 className="w-10 h-10 max-md:w-8 max-md:h-8 bg-[#060B27] border-[1px] border-[#282D45] rounded-lg flex items-center justify-center hover:bg-[#29E68B] transition-colors duration-200"
                                 aria-label="Follow Penta Studio on Instagram"
                                 title="Penta Studio on Instagram"

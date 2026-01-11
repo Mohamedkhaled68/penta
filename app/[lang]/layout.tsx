@@ -61,8 +61,8 @@ export const metadata: Metadata = {
         description:
             "Professional software development company specializing in modern web applications, mobile apps, and cloud solutions.",
         images: ["/main2.webp"],
-        creator: "@pentastudio",
-        site: "@pentastudio",
+        creator: "@PentaStd",
+        site: "@PentaStd",
     },
     robots: {
         index: true,
@@ -130,10 +130,9 @@ export default async function RootLayout({
         },
         // "image": "https://your-domain.com/og-image.jpg",
         sameAs: [
-            "https://linkedin.com/company/penta-studio",
-            "https://twitter.com/penta-studio",
-            "https://github.com/penta-studio",
-            "https://facebook.com/penta-studio",
+            "https://www.linkedin.com/company/penta-std/",
+            "https://x.com/PentaStd",
+            "https://www.instagram.com/pentastd/",
         ],
         contactPoint: [
             {
@@ -151,9 +150,11 @@ export default async function RootLayout({
         ],
         address: {
             "@type": "PostalAddress",
-            addressCountry: "Egypt", // Update with your actual location
-            addressRegion: "Cairo", // Update with your actual state/region
-            addressLocality: "Cairo", // Update with your actual city
+            streetAddress: "Virkakatu 8J",
+            postalCode: "90570",
+            addressLocality: "Oulu",
+            addressRegion: "Oulu",
+            addressCountry: "Finland",
         },
         foundingDate: "2025", // Update with actual founding date
         numberOfEmployees: {
@@ -322,6 +323,12 @@ export default async function RootLayout({
             <body
                 className="!bg-[#060B27] text-white"
                 cz-shortcut-listen="true"
+                style={{
+                    fontFamily:
+                        lang === "ar"
+                            ? "plex-regular"
+                            : "Satoshi-VariableItalic",
+                }}
             >
                 {/* Google Analytics */}
                 {process.env.NEXT_PUBLIC_GA_ID && (

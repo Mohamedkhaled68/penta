@@ -38,6 +38,12 @@ const LanguagesSelector = () => {
                     <span
                         className="text-[#8F9BB7] cursor-pointer hover:text-[#b4c1df] transition-colors duration-300 ease-in-out"
                         onClick={switchLanguage}
+                        style={{
+                            fontFamily:
+                                lang === "en"
+                                    ? "plex-regular"
+                                    : "Satoshi-VariableItalic",
+                        }}
                     >
                         {lang === "en" ? "عربي" : "EN"}
                     </span>

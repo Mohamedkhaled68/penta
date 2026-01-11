@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { NextRequest, NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -17,32 +17,40 @@ interface ContactFormData {
 export async function POST(req: NextRequest) {
     try {
         const body: ContactFormData = await req.json();
-        const { firstName, lastName, email, phoneNumber, country, message, agreeToTerms } = body;
+        const {
+            firstName,
+            lastName,
+            email,
+            phoneNumber,
+            country,
+            message,
+            agreeToTerms,
+        } = body;
 
         if (!firstName || !lastName || !email || !phoneNumber || !message) {
             return NextResponse.json(
-                { error: 'All fields are required' },
+                { error: "All fields are required" },
                 { status: 400 }
             );
         }
 
         if (!agreeToTerms) {
             return NextResponse.json(
-                { error: 'You must agree to the terms' },
+                { error: "You must agree to the terms" },
                 { status: 400 }
             );
         }
 
         if (!/\S+@\S+\.\S+/.test(email)) {
             return NextResponse.json(
-                { error: 'Invalid email address' },
+                { error: "Invalid email address" },
                 { status: 400 }
             );
         }
 
         const emailToCompany = await resend.emails.send({
-            from: 'Penta Studio <onboarding@resend.dev>',
-            to: [process.env.COMPANY_EMAIL || 'gadoomarsh@gmail.com'],
+            from: "Penta Studio <onboarding@resend.dev>",
+            to: [process.env.COMPANY_EMAIL || "gadoomarsh@gmail.com"],
             subject: `🎯 New Lead: ${firstName} ${lastName}`,
             html: `
                 <!DOCTYPE html>
@@ -144,14 +152,18 @@ export async function POST(req: NextRequest) {
                                                 <tr>
                                                     <td align="center">
                                                         <p style="color: #6B7280; margin: 0; font-size: 13px;">
-                                                            📅 ${new Date().toLocaleString('en-US', {
-                timeZone: 'Africa/Cairo',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            })} (Cairo Time)
+                                                            📅 ${new Date().toLocaleString(
+                                                                "en-US",
+                                                                {
+                                                                    timeZone:
+                                                                        "Africa/Cairo",
+                                                                    year: "numeric",
+                                                                    month: "long",
+                                                                    day: "numeric",
+                                                                    hour: "2-digit",
+                                                                    minute: "2-digit",
+                                                                }
+                                                            )} (Cairo Time)
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -170,9 +182,9 @@ export async function POST(req: NextRequest) {
         });
 
         const emailToCustomer = await resend.emails.send({
-            from: 'Penta Studio <onboarding@resend.dev>',
+            from: "Penta Studio <onboarding@resend.dev>",
             to: [email],
-            subject: '✨ We Got Your Message!',
+            subject: "✨ We Got Your Message!",
             html: `
                 <!DOCTYPE html>
                 <html lang="en">
@@ -237,7 +249,11 @@ export async function POST(req: NextRequest) {
                                                         <p style="color: #9CA3AF; margin: 0 0 20px 0; font-size: 16px; font-weight: 500;">
                                                             Explore our work while you wait
                                                         </p>
-                                                        <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://pentastudio.tech'}/#our-work" style="display: inline-block; padding: 16px 36px; background: linear-gradient(135deg, #29E68C 0%, #1DB874 100%); color: #0F1629; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 15px; box-shadow: 0 8px 20px rgba(41, 230, 140, 0.3);">
+                                                        <a href="${
+                                                            process.env
+                                                                .NEXT_PUBLIC_SITE_URL ||
+                                                            "https://pentastudio.tech"
+                                                        }/#our-work" style="display: inline-block; padding: 16px 36px; background: linear-gradient(135deg, #29E68C 0%, #1DB874 100%); color: #0F1629; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 15px; box-shadow: 0 8px 20px rgba(41, 230, 140, 0.3);">
                                                             🎨 View Portfolio
                                                         </a>
                                                     </td>
@@ -265,7 +281,7 @@ export async function POST(req: NextRequest) {
                                         <td style="padding: 32px 40px; text-align: center; border-top: 1px solid rgba(139, 146, 167, 0.15);">
                                             <p style="color: #6B7280; margin: 0; font-size: 13px; line-height: 1.6;">
                                                 <strong style="color: #29E68C;">Penta Studio</strong><br>
-                                                Cairo, Egypt • Crafting Digital Excellence Worldwide
+                                                Virkakatu 8J, 90570, Oulu, Finland • Crafting Digital Excellence Worldwide
                                             </p>
                                         </td>
                                     </tr>
@@ -279,19 +295,18 @@ export async function POST(req: NextRequest) {
             `,
         });
 
-        console.log('Emails sent successfully');
+        console.log("Emails sent successfully");
 
         return NextResponse.json(
-            { success: true, message: 'Message sent successfully' },
+            { success: true, message: "Message sent successfully" },
             { status: 200 }
         );
-
     } catch (error: any) {
-        console.error('Error sending email:', error);
+        console.error("Error sending email:", error);
         return NextResponse.json(
             {
-                error: 'Failed to send message',
-                details: error.message || 'Unknown error occurred'
+                error: "Failed to send message",
+                details: error.message || "Unknown error occurred",
             },
             { status: 500 }
         );

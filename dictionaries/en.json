@@ -28,9 +28,9 @@
         "input_placeholder": "Enter your email",
         "location": "Location",
         "footer_text": "All rights reserved.",
-                "subscribe_button": "Subscribe",
-        "subscribing": "Subscribing...",        
-         "newsletter": {
+        "subscribe_button": "Subscribe",
+        "subscribing": "Subscribing...",
+        "newsletter": {
             "toast": {
                 "success": "Thank you for subscribing! We'll keep you updated.",
                 "error": "Failed to subscribe. Please try again."
@@ -187,5 +187,126 @@
                 "error_message": "Failed to send message. Please try again."
             }
         }
+    },
+    "privacy_page": {
+        "title": "Privacy Policy",
+        "sections": [
+            {
+                "id": 1,
+                "title": "Information We Collect",
+                "content": {
+                    "personalInformation": "Name, email address, phone number, company details, and any information you provide when contacting us or filling out forms.",
+                    "projectInformation": "Details you share about your business needs, project scope, or requirements when working with us.",
+                    "technicalInformation": "IP address, browser type, device information, cookies, and usage data collected automatically when you visit our website.",
+                    "paymentInformation": "When applicable, billing details and payment-related data processed securely by third-party providers."
+                }
+            },
+            {
+                "id": 2,
+                "title": "How We Use Your Information",
+                "content": [
+                    "Deliver and improve our services (web, mobile, dashboards, AI tools, etc.).",
+                    "Respond to inquiries, provide project estimates, and communicate updates.",
+                    "Process transactions and manage client accounts.",
+                    "Enhance website performance, security, and user experience.",
+                    "Send updates, newsletters, or promotional content (only if you opt-in).",
+                    "Comply with legal obligations and resolve disputes."
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Data Sharing & Disclosure",
+                "content": {
+                    "policy": "We do not sell or rent your personal information.",
+                    "sharedWith": [
+                        "Trusted Service Providers: For hosting, analytics, payment processing, and cloud infrastructure.",
+                        "Business Partners: In cases where collaboration is required for project delivery.",
+                        "Legal Authorities: If required by law or to protect our rights, safety, or property."
+                    ],
+                    "note": "All third parties are obligated to maintain confidentiality and use your data only for agreed purposes."
+                }
+            },
+            {
+                "id": 4,
+                "title": "Data Security",
+                "content": [
+                    "Encryption for data transmission and storage.",
+                    "Access controls and authentication for sensitive systems.",
+                    "Regular monitoring, vulnerability testing, and updates.",
+                    "No method of transmission over the internet is 100% secure."
+                ]
+            },
+            {
+                "id": 5,
+                "title": "Your Rights",
+                "content": {
+                    "rights": [
+                        "Access, update, or delete your personal data.",
+                        "Request a copy of the data we hold about you.",
+                        "Withdraw consent for marketing communications.",
+                        "Restrict or object to certain types of data processing."
+                    ],
+                    "contactEmail": "penta.studioo@gmail.com"
+                }
+            },
+            {
+                "id": 6,
+                "title": "Data Retention",
+                "content": "We retain personal data only as long as necessary for the purposes outlined in this policy or as required by law."
+            },
+            {
+                "id": 7,
+                "title": "Cookies & Tracking",
+                "content": [
+                    "Improve site performance.",
+                    "Analyze traffic and user behavior.",
+                    "Personalize content and ads (if applicable)."
+                ]
+            },
+            {
+                "id": 8,
+                "title": "International Data Transfers",
+                "content": "Your information may be transferred and stored outside your country of residence with appropriate safeguards in place."
+            },
+            {
+                "id": 9,
+                "title": "Updates to This Policy",
+                "content": "We may update this Privacy Policy from time to time. Updates will be posted on this page with the effective date."
+            },
+            {
+                "id": 10,
+                "title": "Contact Us",
+                "content": {
+                    "email": "penta.studioo@gmail.com",
+                    "phone": "+358 50 5300004",
+                    "location": "Virkakatu 8J, 90570, Oulu, Finland"
+                }
+            }
+        ]
+    },
+    "terms_page": {
+        "1. Acceptance of Terms": "By using our services, you agree to these Terms of Service and our Privacy Policy. If you do not agree, you should not use our website or services.",
+
+        "2. Services Provided": "Penta Studio specializes in:\n- Web development and design.\n- Mobile applications (iOS & Android).\n- AI tools, automation, and dashboards.\n- Cloud-native and DevOps solutions.\n- Custom enterprise management systems (ERP, CRM, etc.).\nAll services are delivered based on agreed project scopes, contracts, and timelines.",
+
+        "3. Use of Our Website & Content": "You may browse our website and access publicly available content for personal or business use.\nYou agree not to copy, resell, or misuse our content, brand, or intellectual property without prior written consent.\nUnauthorized use of our website may result in legal action.",
+
+        "4. Client Responsibilities": "When engaging with Penta Studio:\n- You agree to provide accurate project details, requirements, and communication.\n- You are responsible for ensuring that any data or content you provide does not infringe third-party rights.\n- You agree to meet agreed payment terms, as outlined in individual contracts.",
+
+        "5. Intellectual Property": "All code, designs, and solutions developed by Penta Studio remain our intellectual property until full payment is received.\nAfter delivery and payment, ownership rights are transferred as per contract agreements.\nPenta Studio retains the right to showcase non-confidential parts of projects in its portfolio.",
+
+        "6. Payments & Billing": "Payment terms are defined in project agreements.\nLate payments may incur additional fees or suspension of services.\nAll payments are non-refundable unless otherwise agreed in writing.",
+
+        "7. Confidentiality": "Both parties agree to maintain the confidentiality of sensitive information exchanged during projects. This obligation continues even after the termination of services.",
+
+        "8. Warranties & Limitations": "Penta Studio guarantees professional services delivered with best practices in software engineering.\nHowever, we do not warrant that our services will be error-free, uninterrupted, or suitable for every purpose.\nPenta Studio is not liable for indirect damages, loss of business, or data issues resulting from client misuse.",
+
+        "9. Termination": "We reserve the right to suspend or terminate services if:\n- The client breaches these Terms.\n- Payments are not made as agreed.\n- The project involves unlawful or unethical activities.\nClients may also terminate contracts with written notice, as per agreement terms.",
+
+        "10. Updates to Terms": "We may revise these Terms of Service periodically. Updates will be posted on this page with the effective date. Your continued use of our services constitutes acceptance of changes.",
+
+        "11. Governing Law": "These Terms of Service shall be governed and construed in accordance with the applicable international business laws and relevant national laws. Depending on the client’s location, disputes may be subject to the jurisdiction of:\n- European Union Law and Finnish Law for clients in the EU region.\n- United States Federal and State Law for clients in North America.\n- Saudi Arabian Law for clients in the Kingdom of Saudi Arabia.\n- United Arab Emirates Law for clients in the UAE.\n- Egyptian Law for clients in Egypt and MENA.\n- International Business Law for global transactions.",
+
+        "12. Contact Us": "For any questions about these Terms, please contact us at:\n- Email: penta.studioo@gmail.com\n- Phone: +358 50 5300004\n- Location: Virkakatu 8J, 90570, Oulu, Finland"
     }
 }
