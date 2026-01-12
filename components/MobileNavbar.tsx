@@ -7,6 +7,7 @@ import Link from "next/link";
 import Contact from "@/public/Icons/Contact.svg";
 import { usePathname } from "next/navigation";
 import { useDictionary } from "@/hooks/useDictionary";
+import LanguagesSelector from "./LanguagesSelector";
 
 export default function MobileNavbar() {
     const [open, setOpen] = useState(false);
@@ -35,43 +36,43 @@ export default function MobileNavbar() {
         const mouseX = event.clientX;
         const elementCenterX = rect.left + rect.width / 2;
 
-        const direction = mouseX < elementCenterX ? 'left' : 'right';
+        const direction = mouseX < elementCenterX ? "left" : "right";
 
-        const gradient = direction === 'left'
-            ? `linear-gradient(90deg, #29E68C 0%, #8F9BB7 100%)`
-            : `linear-gradient(270deg, #29E68C 0%, #8F9BB7 100%)`;
+        const gradient =
+            direction === "left"
+                ? `linear-gradient(90deg, #29E68C 0%, #8F9BB7 100%)`
+                : `linear-gradient(270deg, #29E68C 0%, #8F9BB7 100%)`;
 
         target.style.background = gradient;
-        target.style.webkitBackgroundClip = 'text';
-        target.style.backgroundClip = 'text';
-        target.style.webkitTextFillColor = 'transparent';
-        target.style.transition = 'all 0.3s ease-in-out';
+        target.style.webkitBackgroundClip = "text";
+        target.style.backgroundClip = "text";
+        target.style.webkitTextFillColor = "transparent";
+        target.style.transition = "all 0.3s ease-in-out";
     };
 
     const handleMouseLeave = (event: React.MouseEvent<HTMLElement>) => {
         const target = event.currentTarget;
-        target.style.background = 'none';
-        target.style.webkitTextFillColor = '';
-        target.style.backgroundClip = '';
-        target.style.webkitBackgroundClip = '';
+        target.style.background = "none";
+        target.style.webkitTextFillColor = "";
+        target.style.backgroundClip = "";
+        target.style.webkitBackgroundClip = "";
     };
 
     const getLinkClass = (href: string): string => {
         const isActive = href.startsWith("#")
             ? pathname === "/" && window.location.hash === href
             : pathname === href;
-        return `text-xl font-medium transition-all duration-300 ease-in-out cursor-pointer relative ${isActive
-            ? 'text-[#29E68C]'
-            : 'text-[#8F9BB7]'
-            }`;
+        return `text-xl font-medium transition-all duration-300 ease-in-out cursor-pointer relative ${
+            isActive ? "text-[#29E68C]" : "text-[#8F9BB7]"
+        }`;
     };
 
     const scrollToSection = (sectionId: string): void => {
-        const element = document.getElementById(sectionId.replace('#', ''));
+        const element = document.getElementById(sectionId.replace("#", ""));
         if (element) {
             element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+                behavior: "smooth",
+                block: "start",
             });
         }
     };
@@ -93,7 +94,11 @@ export default function MobileNavbar() {
             <div className=" font-plex-regular mt-5 flex justify-between items-center fixed top-0 left-0 right-0 z-50 h-[60px] px-6 w-11/12 mx-auto rounded-4xl transition-all duration-500 bg-[#0E2334]/30 backdrop-blur-3xl mb-10">
                 <div className="flex items-center gap-3">
                     <Image src={logo} alt="penta logo" className="h-9 w-9" />
-                    <Image src={Penta} alt="penta" className="h-[82px] w-[80px]" />
+                    <Image
+                        src={Penta}
+                        alt="penta"
+                        className="h-[82px] w-[80px]"
+                    />
                 </div>
                 <button
                     onClick={handleOpenMenu}
@@ -106,21 +111,33 @@ export default function MobileNavbar() {
 
             {/* Overlay Menu */}
             {open && (
-                <div className={`fixed inset-0 z-50 bg-[#0E2334]/20 backdrop-blur-3xl flex flex-col items-center justify-start pt-16 transition-all duration-300 ease-in-out ${isAnimating ? 'opacity-100' : 'opacity-0'
-                    }`}>
+                <div
+                    className={`fixed inset-0 z-50 bg-[#0E2334]/20 backdrop-blur-3xl flex flex-col items-center justify-start pt-16 transition-all duration-300 ease-in-out ${
+                        isAnimating ? "opacity-100" : "opacity-0"
+                    }`}
+                >
                     <button
                         onClick={handleCloseMenu}
-                        className={`absolute top-8 right-[38px] text-3xl text-[#29E68C] focus:outline-none cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-90 ${isAnimating ? 'opacity-100 rotate-0' : 'opacity-0 rotate-180'
-                            }`}
+                        className={`absolute top-8 right-[38px] text-3xl text-[#29E68C] focus:outline-none cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-90 ${
+                            isAnimating
+                                ? "opacity-100 rotate-0"
+                                : "opacity-0 rotate-180"
+                        }`}
                         aria-label="Close menu"
                     >
                         &times;
                     </button>
-                    <nav className={`flex flex-col gap-5 items-center transform transition-all duration-500 ease-out ${isAnimating ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-5 opacity-0 scale-95'
-                        }`}>
+                    <nav
+                        className={`flex flex-col gap-5 items-center transform transition-all duration-500 ease-out ${
+                            isAnimating
+                                ? "translate-y-0 opacity-100 scale-100"
+                                : "translate-y-5 opacity-0 scale-95"
+                        }`}
+                    >
                         {links.map((link, index) => {
                             const isActive = link.href.startsWith("#")
-                                ? pathname === "/" && window.location.hash === link.href
+                                ? pathname === "/" &&
+                                  window.location.hash === link.href
                                 : pathname === link.href;
 
                             return link.href.startsWith("#") ? (
@@ -130,16 +147,25 @@ export default function MobileNavbar() {
                                         scrollToSection(link.href);
                                         handleCloseMenu();
                                     }}
-                                    onMouseEnter={e => handleMouseEnter(e, isActive)}
+                                    onMouseEnter={(e) =>
+                                        handleMouseEnter(e, isActive)
+                                    }
                                     onMouseLeave={handleMouseLeave}
-                                    className={`${getLinkClass(link.href)} transform transition-all duration-300 hover:scale-105 ${isAnimating
-                                        ? 'translate-x-0 opacity-100'
-                                        : index % 2 === 0
-                                            ? '-translate-x-8 opacity-0'
-                                            : 'translate-x-8 opacity-0'
-                                        }`}
+                                    className={`${getLinkClass(
+                                        link.href
+                                    )} transform transition-all duration-300 hover:scale-105 ${
+                                        isAnimating
+                                            ? "translate-x-0 opacity-100"
+                                            : index % 2 === 0
+                                            ? "-translate-x-8 opacity-0"
+                                            : "translate-x-8 opacity-0"
+                                    }`}
                                     style={{
-                                        transitionDelay: isAnimating ? `${index * 50}ms` : `${(links.length - index) * 30}ms`
+                                        transitionDelay: isAnimating
+                                            ? `${index * 50}ms`
+                                            : `${
+                                                  (links.length - index) * 30
+                                              }ms`,
                                     }}
                                 >
                                     {link.label}
@@ -149,25 +175,35 @@ export default function MobileNavbar() {
                                     key={link.href}
                                     href={link.href}
                                     onClick={handleCloseMenu}
-                                    onMouseEnter={e => handleMouseEnter(e, isActive)}
+                                    onMouseEnter={(e) =>
+                                        handleMouseEnter(e, isActive)
+                                    }
                                     onMouseLeave={handleMouseLeave}
-                                    className={`${getLinkClass(link.href)} transform transition-all duration-300 hover:scale-105 ${isAnimating
-                                        ? 'translate-x-0 opacity-100'
-                                        : index % 2 === 0
-                                            ? '-translate-x-8 opacity-0'
-                                            : 'translate-x-8 opacity-0'
-                                        }`}
+                                    className={`${getLinkClass(
+                                        link.href
+                                    )} transform transition-all duration-300 hover:scale-105 ${
+                                        isAnimating
+                                            ? "translate-x-0 opacity-100"
+                                            : index % 2 === 0
+                                            ? "-translate-x-8 opacity-0"
+                                            : "translate-x-8 opacity-0"
+                                    }`}
                                     style={{
-                                        transitionDelay: isAnimating ? `${index * 50}ms` : `${(links.length - index) * 30}ms`
+                                        transitionDelay: isAnimating
+                                            ? `${index * 50}ms`
+                                            : `${
+                                                  (links.length - index) * 30
+                                              }ms`,
                                     }}
                                 >
                                     {link.label}
                                 </Link>
                             );
                         })}
-                        <div className=" mt-20 h-[50px] w-[136px] flex justify-center items-center">
+                        <div className=" mt-20 h-[50px] w-[136px] flex flex-col gap-8 justify-center items-center">
+                            <LanguagesSelector />
                             <a
-                                href="https://wa.me/0201551850855"
+                                href="https://wa.me/+358505300004"
                                 target="_blank"
                                 className="w-[120px] h-[40px] bg-[#29E68C] hover:bg-[#4FF0A3] text-[#070707] text-base font-medium cursor-pointer rounded-[36px] transition-all duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px]"
                             >

@@ -4,6 +4,7 @@ import React, { useState, FormEvent } from "react";
 import logo from "@/public/Logo.svg";
 import Penta from "@/public/Penta.svg";
 import {
+    Facebook,
     Instagram,
     Linkedin,
     MailIcon,
@@ -365,6 +366,21 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                             >
                                 <Instagram
+                                    className="w-6 h-6 max-md:w-4 max-md:h-4 text-[#29E68B] group-hover:text-[#060B27] transition-colors duration-200"
+                                    aria-hidden="true"
+                                />
+                            </a>
+                        </li>
+                        <li className="group">
+                            <a
+                                href="https://www.facebook.com/share/182i1yEqNS/"
+                                className="w-10 h-10 max-md:w-8 max-md:h-8 bg-[#060B27] border-[1px] border-[#282D45] rounded-lg flex items-center justify-center hover:bg-[#29E68B] transition-colors duration-200"
+                                aria-label="Follow Penta Studio on Facebook"
+                                title="Penta Studio on Facebook"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Facebook
                                     className="w-6 h-6 max-md:w-4 max-md:h-4 text-[#29E68B] group-hover:text-[#060B27] transition-colors duration-200"
                                     aria-hidden="true"
                                 />
