@@ -166,7 +166,7 @@ export default function Navbar() {
                 >
                     {dictionary?.navbar.services}
                 </Link>
-                <Link
+                {/* <Link
                     href="/#our-work"
                     className={getNavButtonClass("our-work")}
                     onMouseEnter={(e) =>
@@ -178,7 +178,7 @@ export default function Navbar() {
                     onMouseLeave={handleMouseLeave}
                 >
                     {dictionary?.navbar.works}
-                </Link>
+                </Link> */}
                 <Link
                     href="/#our-partners"
                     className={getNavButtonClass("our-partners")}

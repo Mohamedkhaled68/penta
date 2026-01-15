@@ -13,6 +13,7 @@ import { AnimateOnView } from "../global components/AnimateOnView"; // import th
 import { useDictionary } from "@/hooks/useDictionary";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { HoverButton } from "../global components/HoverButton";
+import Link from "next/link";
 
 export default function OurServicesComponents() {
     const dictionary = useDictionary();
@@ -23,7 +24,7 @@ export default function OurServicesComponents() {
             {/* Management Systems */}
             <AnimateOnView
                 animation="up"
-                className="col-span-2 min-h-[400px] sm:min-h-[450px] lg:h-[450px] rounded-xl flex flex-col-reverse lg:flex-row justify-between items-center gap-6 sm:gap-8 lg:gap-20 bg-[#0E1330]/95 border-2 border-[#282D45] p-4 sm:p-8 lg:p-16 relative overflow-hidden"
+                className="col-span-2 min-h-[400px] sm:h-[450px] lg:h-[450px] rounded-xl flex flex-col-reverse lg:flex-row justify-between items-center gap-6 sm:gap-8 lg:gap-20 bg-[#0E1330]/95 border-2 border-[#282D45] p-4 sm:p-8 lg:p-16 relative overflow-hidden"
             >
                 <Image
                     src={shaddow}
@@ -90,7 +91,7 @@ export default function OurServicesComponents() {
             {/* Web Development */}
             <AnimateOnView
                 animation="up"
-                className="col-span-2 h-[400px] max-lg:h-[560px] max-md:h-[540px] max-sm:h-[425px] rounded-xl flex flex-col-reverse lg:flex-row justify-between items-center gap-6 sm:gap-4 lg:gap-20 bg-[#0E1330]/95 border-2 border-[#282D45] p-4 sm:p-8 lg:p-16 relative overflow-hidden"
+                className="col-span-2 h-[400px] max-lg:h-[560px] max-md:h-[540px] max-sm:h-[425px] rounded-xl flex flex-col lg:flex-row justify-between items-center gap-6 sm:gap-4 lg:gap-20 bg-[#0E1330]/95 border-2 border-[#282D45] p-4 sm:p-8 lg:p-16 relative overflow-hidden"
             >
                 <figure className="relative w-1/2 max-lg:w-full h-[300px] max-lg:h-[390px] max-md:h-[300px] rounded-3xl overflow-hidden z-50">
                     <Image
@@ -206,7 +207,7 @@ export default function OurServicesComponents() {
             {/* Cloud & DevOps */}
             <AnimateOnView
                 animation="left"
-                className="col-span-1 max-lg:col-span-2 h-[602px] max-lg:h-[540px] max-sm:h-max rounded-xl flex flex-col justify-center items-center border-2 border-[#282D45] relative overflow-hidden bg-gradient-to-br from-[#133F43] via-[#0E1330] to-[#0E1330]"
+                className="col-span-1 max-lg:col-span-2 h-[602px] max-lg:h-[540px] max-sm:h-[450px] rounded-xl flex flex-col justify-center items-center border-2 border-[#282D45] relative overflow-hidden bg-gradient-to-br from-[#133F43] via-[#0E1330] to-[#0E1330]"
             >
                 <figure className="relative w-full h-[350px] max-sm:h-[250px] overflow-hidden">
                     <Image
@@ -221,7 +222,7 @@ export default function OurServicesComponents() {
                     />
                 </figure>
 
-                <div className="w-full h-[252px] max-sm:h-max relative overflow-hidden flex flex-col justify-center max-sm:p-6 pt-8 p-12">
+                <div className="w-full h-[252px] max-sm:h-max relative overflow-hidden flex flex-col justify-center max-sm:p-6 max-sm:pb-3 pt-8 p-12">
                     <Image
                         src={shaddow2}
                         alt=""
@@ -264,9 +265,9 @@ export default function OurServicesComponents() {
             {/* AI Tools & Automation */}
             <AnimateOnView
                 animation="right"
-                className="col-span-1 max-lg:col-span-2 h-[602px] max-lg:h-[540px] max-sm:h-[560px] rounded-xl flex flex-col justify-between items-center border-2 border-[#282D45] relative overflow-hidden bg-gradient-to-r from-[#0E1330] to-[#16584E]"
+                className="col-span-1 max-lg:col-span-2 h-[602px] max-lg:h-[540px] max-sm:h-[490px] rounded-xl flex flex-col justify-between items-center border-2 border-[#282D45] relative overflow-hidden bg-gradient-to-r from-[#0E1330] to-[#16584E]"
             >
-                <div className="w-full h-[252px] max-sm:h-max relative overflow-hidden flex flex-col justify-center max-lg:p-6 max-sm:pt-8 p-12">
+                <div className="w-full h-[252px] max-sm:h-max relative overflow-hidden flex flex-col justify-center max-lg:p-6 max-sm:pt-8 max-sm:pb-2 p-12">
                     <Image
                         src={shaddow2}
                         alt=""
@@ -326,6 +327,7 @@ export default function OurServicesComponents() {
                     {dictionary?.ourServices?.substitleforButton}
                 </h4>
                 <HoverButton
+                    as={Link}
                     href="/about/#contact"
                     className="w-1/3 sm:w-[120px] lg:w-[140px] h-[42px] lg:h-[48px] bg-[#29E68C] text-[#060B27] border-[0.5px] border-[#29E68B] text-sm sm:text-base font-medium cursor-pointer rounded-[36px] transition-colors duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px] flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-[#29E68C]"
                     aria-label="Contact Penta Studio to start your development project"

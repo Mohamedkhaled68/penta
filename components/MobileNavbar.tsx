@@ -18,8 +18,8 @@ export default function MobileNavbar() {
     const links = [
         { href: "/", label: `${dictionary?.navbar.home}` },
         { href: "#services", label: `${dictionary?.navbar.services}` },
-        { href: "#our-work", label: `${dictionary?.navbar.works}` },
-        // { href: "#our-partners", label: "Our Partners" },
+        // { href: "#our-work", label: `${dictionary?.navbar.works}` },
+        { href: "#our-partners", label: "Our Partners" },
         { href: "/about", label: `${dictionary?.navbar.about}` },
         // { href: "/blog", label: "Blog" },
     ];
@@ -200,7 +200,7 @@ export default function MobileNavbar() {
                                 </Link>
                             );
                         })}
-                        <div className=" mt-20 h-[50px] w-[136px] flex flex-col gap-8 justify-center items-center">
+                        <div className="mt-20 w-[136px] flex flex-col gap-8 justify-center items-center">
                             <LanguagesSelector />
                             <a
                                 href="https://wa.me/+358505300004"

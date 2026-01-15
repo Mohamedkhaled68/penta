@@ -50,14 +50,14 @@ export default function Footer() {
 
             toast.success(
                 dictionary?.footer?.newsletter?.toast?.success ||
-                    "Thank you for subscribing! We'll keep you updated."
+                "Thank you for subscribing! We'll keep you updated."
             );
             setNewsletterEmail("");
         } catch (error) {
             console.error("Error subscribing to newsletter:", error);
             toast.error(
                 dictionary?.footer?.newsletter?.toast?.error ||
-                    "Failed to subscribe. Please try again."
+                "Failed to subscribe. Please try again."
             );
         } finally {
             setIsSubmittingNewsletter(false);
@@ -66,7 +66,7 @@ export default function Footer() {
 
     return (
         <footer
-            className=" font-plex-regular bg-[#0F202E] w-full min-h-[540px] max-md:min-h-auto flex flex-col max-md:gap-5 justify-between p-16 max-md:p-6 max-md:py-12 pb-5"
+            className=" font-plex-regular bg-[#0F202E] w-full min-h-[500px] max-md:min-h-auto flex flex-col max-md:gap-5 justify-between p-16 max-md:p-6 max-md:py-12 pb-5"
             role="contentinfo"
             aria-label="Site footer with contact information and navigation"
         >
@@ -117,9 +117,9 @@ export default function Footer() {
                             >
                                 {isSubmittingNewsletter
                                     ? dictionary?.footer?.subscribing ||
-                                      "Subscribing..."
+                                    "Subscribing..."
                                     : dictionary?.footer?.subscribe_button ||
-                                      "Subscribe"}
+                                    "Subscribe"}
                             </HoverButton>
                         </form>
                     </section>
@@ -173,7 +173,7 @@ export default function Footer() {
                                     {dictionary?.footer?.services || "Services"}
                                 </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link
                                     href={`/${lang}#our-work`}
                                     className="hover:text-[#29E68B] transition-colors"
@@ -182,7 +182,7 @@ export default function Footer() {
                                 >
                                     {dictionary?.footer?.works || "Our Work"}
                                 </Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link
                                     href={`/${lang}#our-partners`}
@@ -196,6 +196,16 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
+                                    href={`/about`}
+                                    className="hover:text-[#29E68B] transition-colors"
+                                    aria-label="Learn about our development process"
+                                    title="Our Web Development Process - From Concept to Launch"
+                                >
+                                    {dictionary?.navbar.about}
+                                </Link>
+                            </li>
+                            {/* <li>
+                                <Link
                                     href={`/${lang}/blog`}
                                     className="hover:text-[#29E68B] transition-colors"
                                     aria-label="Read our blog about web development and design trends"
@@ -203,7 +213,7 @@ export default function Footer() {
                                 >
                                     {dictionary?.footer?.blog || "Blog"}
                                 </Link>
-                            </li>
+                            </li> */}
                         </ul>
                     </nav>
 

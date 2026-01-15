@@ -142,11 +142,11 @@ export default function Home() {
                         </section>
                     </Suspense>
 
-                    <Suspense fallback={<LoadingFallback />}>
+                    {/* <Suspense fallback={<LoadingFallback />}>
                         <section id="our-work" className="scroll-mt-16">
                             <OurWorks />
                         </section>
-                    </Suspense>
+                    </Suspense> */}
 
                     <Suspense fallback={<LoadingFallback />}>
                         <section id="our-process" className="scroll-mt-16">

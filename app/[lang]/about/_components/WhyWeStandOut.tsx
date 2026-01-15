@@ -35,9 +35,9 @@ export default function WhyWeStandOut() {
     const dictionary = useDictionary();
 
     return (
-        <section className="w-full h-max relative flex flex-col gap-8 items-start justify-between max-sm:pt-6 py-16 px-20 max-md:px-6">
+        <section className="w-full mx-auto h-max relative flex flex-col gap-8 items-start justify-between max-sm:pt-6 py-16 px-20 max-md:px-6">
             <AnimateOnView animation="up">
-                <h1 className="text-2xl w-max font-bold text-start border-b-2 border-b-[#29E68B]">
+                <h1 className="text-2xl max-sm:text-xl w-max font-bold text-start border-b-2 max-sm:border-b-[1px] pb-1 border-b-[#29E68B]">
                     {dictionary?.about_page?.section2?.title}
                 </h1>
             </AnimateOnView>
@@ -48,12 +48,12 @@ export default function WhyWeStandOut() {
             >
                 <p>{dictionary?.about_page?.section2?.description}</p>
             </AnimateOnView>
-            <div className="w-full grid grid-cols-3 max-md:grid-cols-1 justify-between gap-8">
+            <div className="w-full max-sm:w-11/12 max-sm:mx-auto grid grid-cols-3 max-md:grid-cols-1 justify-between gap-8">
                 {featuresData.map((feature, idx) => (
                     <AnimateOnView
                         animation="up"
                         key={feature.id}
-                        className={`col-span-1 max-w-[390px] mx-auto h-[322px] flex flex-col justify-center gap-6 px-14 max-sm:px-10 py-24 rounded-4xl ${feature.bgColor}`}
+                        className={`col-span-1 max-w-[390px] mx-auto h-[322px] max-sm:h-[320px] flex flex-col justify-center gap-6 px-14 max-sm:px-10 py-24 rounded-4xl ${feature.bgColor}`}
                     >
                         <Image
                             src={feature.svg}
