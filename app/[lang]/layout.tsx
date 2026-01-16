@@ -46,21 +46,12 @@ export const metadata: Metadata = {
         title: "Penta Studio - Transform Ideas Into Secure Digital Products",
         description:
             "Professional software development company specializing in modern web applications, mobile apps, and cloud solutions for businesses worldwide.",
-        images: [
-            {
-                url: "/main2.webp",
-                width: 1200,
-                height: 630,
-                alt: "Penta Studio - Modern web development and digital solutions",
-            },
-        ],
     },
     twitter: {
         card: "summary_large_image",
         title: "Penta Studio - Transform Ideas Into Secure Digital Products",
         description:
             "Professional software development company specializing in modern web applications, mobile apps, and cloud solutions.",
-        images: ["/main2.webp"],
         creator: "@PentaStd",
         site: "@PentaStd",
     },

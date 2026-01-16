@@ -49,21 +49,12 @@ export const metadata: Metadata = {
         description:
             "Expert development services for web, mobile, and cloud-native solutions. Custom ERP systems, mobile apps, AI automation, and DevOps infrastructure.",
         siteName: "Penta Studio",
-        images: [
-            {
-                url: "/main2.webp",
-                width: 1200,
-                height: 630,
-                alt: "Penta Studio - Modern web development and digital solutions",
-            },
-        ],
     },
     twitter: {
         card: "summary_large_image",
         title: "Penta Studio - Transform Ideas Into Secure Digital Products",
         description:
             "Expert development services for web, mobile, and cloud-native solutions.",
-        images: ["/main2.webp"],
         creator: "@PentaStd",
     },
     robots: {

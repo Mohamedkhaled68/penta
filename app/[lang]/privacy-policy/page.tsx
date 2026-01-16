@@ -37,14 +37,7 @@ export const metadata: Metadata = {
         locale: "en_US",
         siteName: "Penta Studio",
         url: "https://pentastudio.tech/privacy-policy",
-        images: [
-            {
-                url: "/og-privacy-image.jpg",
-                width: 1200,
-                height: 630,
-                alt: "Penta Studio Privacy Policy",
-            },
-        ],
+
     },
     twitter: {
         card: "summary_large_image",
@@ -52,7 +45,6 @@ export const metadata: Metadata = {
         description:
             "Learn how Penta Studio protects your personal information and ensures data security.",
         creator: "@pentastudio",
-        images: ["/twitter-privacy-image.jpg"],
     },
     robots: {
         index: true,
@@ -143,7 +135,7 @@ export default async function PrivacyPolicyPage({
                                     {section.id === 1 &&
                                         typeof section.content === "object" &&
                                         "personalInformation" in
-                                            section.content && (
+                                        section.content && (
                                             <>
                                                 <p className="leading-relaxed">
                                                     {lang === "en"
@@ -279,8 +271,8 @@ export default async function PrivacyPolicyPage({
                                                         : "على الرغم من جهودنا، "}
                                                     {
                                                         section.content[
-                                                            section.content
-                                                                .length - 1
+                                                        section.content
+                                                            .length - 1
                                                         ]
                                                     }{" "}
                                                     {lang === "en"

@@ -37,14 +37,7 @@ export const metadata: Metadata = {
         locale: "en_US",
         siteName: "Penta Studio",
         url: "https://pentastudio.tech/terms-of-service",
-        images: [
-            {
-                url: "/og-terms-image.jpg",
-                width: 1200,
-                height: 630,
-                alt: "Penta Studio Terms of Service",
-            },
-        ],
+
     },
     twitter: {
         card: "summary_large_image",
@@ -52,7 +45,7 @@ export const metadata: Metadata = {
         description:
             "Read Penta Studio's terms of service and conditions for using our software development services.",
         creator: "@PentaStd",
-        images: ["/twitter-terms-image.jpg"],
+
     },
     robots: {
         index: true,
@@ -79,7 +72,7 @@ const jsonLd = {
         "@type": "Organization",
         name: "Penta Studio",
         url: "https://pentastudio.tech",
-        logo: "https://pentastudio.tech/logo.png",
+        logo: "https://pentastudio.tech/mainLogo.webp",
         contactPoint: {
             "@type": "ContactPoint",
             email: "penta.studioo@gmail.com",
