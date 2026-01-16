@@ -143,7 +143,7 @@ export default function FeedbackCards() {
                             spaceBetween: 30,
                         }
                     }}
-                    className="testimonials-swiper w-full h-[400px] relative"
+                    className="testimonials-swiper w-full h-[400px] max-md:h-[350px] relative"
                 >
                     {/* Left shadow gradient */}
                     <div
@@ -165,7 +165,7 @@ export default function FeedbackCards() {
                         <SwiperSlide key={feedback.id}>
                             <motion.div
                                 transition={{ duration: 0.3 }}
-                                className="w-full max-w-[450px] mx-auto max-sm:w-[280px] mx-auto h-auto min-h-[300px] max-md:min-h-[350px] bg-[#0E2334] flex flex-col justify-between rounded-3xl py-6 border-2 border-transparent hover:border-[#29E68B] duration-300 hover:transform hover:shadow-[0_10px_30px_5px_#0D2834] cursor-pointer"
+                                className="w-full max-w-[450px] mx-auto max-sm:w-[280px] mx-auto h-auto min-h-[300px] max-md:min-h-[290px] bg-[#0E2334] flex flex-col justify-between rounded-3xl py-6 border-2 border-transparent hover:border-[#29E68B] duration-300 hover:transform hover:shadow-[0_10px_30px_5px_#0D2834] cursor-pointer"
                             >
                                 <p className="text-[#F6F6F7] text-[18px] max-md:text-sm leading-relaxed mb-4 max-md:mb-6 font-medium px-5">
                                     &quot;{feedback.description}&quot;
