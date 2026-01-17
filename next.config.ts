@@ -2,9 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
     images: {
-        formats: ["image/webp", "image/avif"],
-        remotePatterns: [],
-        unoptimized: false,
+        unoptimized: true, // Disable image optimization for static export or unsupported hosts
     },
 };
 
