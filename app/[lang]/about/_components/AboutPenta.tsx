@@ -82,7 +82,7 @@ export default function AboutPenta() {
                         </div>
 
                         <Image
-                            src={"/About/mainbg.webp"}
+                            src={"/about/mainbg.webp"}
                             fill
                             alt="Penta Studio development team collaborating on a project"
                             className="w-[365px] h-[400px] object-cover rounded-xl relative z-10"
