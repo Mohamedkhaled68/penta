@@ -55,7 +55,7 @@ export default function AboutPenta() {
                                 >
                                     {point}
                                 </li>
-                            )
+                            ),
                         )}
                     </ul>
                 </AnimateOnView>
@@ -86,7 +86,6 @@ export default function AboutPenta() {
                             fill
                             alt="Penta Studio development team collaborating on a project"
                             className="w-[365px] h-[400px] object-cover rounded-xl relative z-10"
-                            priority
                         />
                     </div>
                 </AnimateOnView>
