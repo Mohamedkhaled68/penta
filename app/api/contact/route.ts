@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
@@ -48,7 +47,7 @@ export async function POST(req: NextRequest) {
             );
         }
 
-        const emailToCompany = await resend.emails.send({
+        await resend.emails.send({
             from: "Penta Studio <onboarding@resend.dev>",
             to: [process.env.COMPANY_EMAIL || "penta.studioo@gmail.com"],
             subject: `🎯 New Lead: ${firstName} ${lastName}`,
@@ -181,7 +180,7 @@ export async function POST(req: NextRequest) {
             `,
         });
 
-        const emailToCustomer = await resend.emails.send({
+        await resend.emails.send({
             from: "Penta Studio <onboarding@resend.dev>",
             to: [email],
             subject: "✨ We Got Your Message!",
@@ -301,12 +300,15 @@ export async function POST(req: NextRequest) {
             { success: true, message: "Message sent successfully" },
             { status: 200 }
         );
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error("Error sending email:", error);
         return NextResponse.json(
             {
                 error: "Failed to send message",
-                details: error.message || "Unknown error occurred",
+                details:
+                    error instanceof Error
+                        ? error.message
+                        : "Unknown error occurred",
             },
             { status: 500 }
         );
