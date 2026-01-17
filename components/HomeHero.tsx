@@ -18,7 +18,6 @@ export default function HomeHero() {
                     src={"/main.png"}
                     alt="Penta Studio - Modern web development services"
                     className="w-full h-full object-cover"
-                    priority
                     width={100}
                     height={100}
                     quality={85}

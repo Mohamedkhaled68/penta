@@ -82,10 +82,10 @@ export default function AboutPenta() {
                         </div>
 
                         <Image
-                            src={"/images/about/about-main.svg"}
+                            src={"/images/about/mainbg.jpg"}
                             fill
                             alt="Penta Studio development team collaborating on a project"
-                            className="w-full h-full object-cover rounded-xl relative z-10"
+                            className="w-[365px] h-[400px] object-cover rounded-xl relative z-10"
                         />
                     </div>
                 </AnimateOnView>
