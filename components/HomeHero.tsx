@@ -15,7 +15,7 @@ export default function HomeHero() {
             {/* Main background */}
             <div className="main-bg-img z-10 absolute w-full">
                 <Image
-                    src={"/main.webp"}
+                    src={"/main.jpg"}
                     alt="Penta Studio - Modern web development services"
                     className="w-full h-full object-cover"
                     priority
