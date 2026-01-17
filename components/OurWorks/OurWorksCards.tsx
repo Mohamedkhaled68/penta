@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import imm from "@/public/OurServices/MANG.webp";
+import imm from "@/public/ourServices/MANG.webp";
 import { motion } from 'framer-motion';
 
 // Define types for TypeScript
