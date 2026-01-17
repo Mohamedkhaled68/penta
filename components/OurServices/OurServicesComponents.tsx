@@ -1,16 +1,16 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import shaddow from "@/public/ourServices/shaddddow.svg";
+import shaddow from "@/public/images/ourServices/shaddddow.svg";
 import shaddow2 from "@/public/Ellipse 2.svg";
-import rightshadoow from "@/public/ourServices/rightshadoow.svg";
+import rightshadoow from "@/public/images/ourServices/rightshadoow.svg";
 import { AnimateOnView } from "../global components/AnimateOnView"; // import the wrapper
 import { HoverButton } from "../global components/HoverButton";
 import Link from "next/link";
 import { useDictionary } from "@/hooks/useDictionary";
 
 export default function OurServicesComponents() {
-    const dictionary = useDictionary()
+    const dictionary = useDictionary();
     return (
         <div className="grid grid-cols-2 max-sm:gap-8 max-lg:gap-6 gap-5 mx-auto px-0">
             {/* Management Systems */}
@@ -69,13 +69,13 @@ export default function OurServicesComponents() {
 
                 <figure className="relative w-1/2 max-lg:w-full h-[250px] sm:h-[300px] lg:h-[373px] max-w-[400px] lg:max-w-[518px] mx-auto rounded-2xl lg:rounded-3xl overflow-hidden">
                     <Image
-                        src={"/ourServices/MANG.webp"}
+                        src={"/images/ourServices/MANG.webp"}
                         alt="Custom ERP and CRM dashboard interface showing business analytics, workflow automation, and real-time reporting features"
                         fill
                         priority
                         quality={90}
                         placeholder="blur"
-                        blurDataURL={"/ourServices/MANG.webp"}
+                        blurDataURL={"/images/ourServices/MANG.webp"}
                         className="object-cover rounded-2xl lg:rounded-3xl hover:scale-120 duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 518px"
                     />
@@ -88,13 +88,13 @@ export default function OurServicesComponents() {
             >
                 <figure className="relative w-1/2 max-lg:w-full h-[300px] max-lg:h-[390px] max-md:h-[300px] rounded-3xl overflow-hidden z-50">
                     <Image
-                        src={"/ourServices/web.webp"}
+                        src={"/images/ourServices/web.webp"}
                         alt="Modern web development portfolio featuring responsive websites, e-commerce platforms, and progressive web applications with SEO optimization"
                         fill
                         loading="lazy"
                         quality={85}
                         placeholder="blur"
-                        blurDataURL={"/ourServices/web.webp"}
+                        blurDataURL={"/images/ourServices/web.webp"}
                         className="object-cover rounded-3xl hover:scale-120 duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     />
@@ -186,13 +186,13 @@ export default function OurServicesComponents() {
 
                 <figure className="relative w-1/2 max-lg:w-full max-md:w-[530px] max-sm:w-full h-[300px] max-lg:h-[390px] max-md:h-[300px] order-1 lg:order-2 rounded-3xl overflow-hidden">
                     <Image
-                        src={"/ourServices/mob.webp"}
+                        src={"/images/ourServices/mob.webp"}
                         alt="Mobile app development portfolio showing iOS and Android applications with modern UI design and cross-platform compatibility"
                         fill
                         loading="lazy"
                         quality={85}
                         placeholder="blur"
-                        blurDataURL={"/ourServices/mob.webp"}
+                        blurDataURL={"/images/ourServices/mob.webp"}
                         className="object-cover rounded-3xl hover:scale-120 duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     />
@@ -206,13 +206,13 @@ export default function OurServicesComponents() {
             >
                 <figure className="relative w-full h-[350px] max-sm:h-[250px] overflow-hidden">
                     <Image
-                        src={"/ourServices/Devops.webp"}
+                        src={"/images/ourServices/Devops.webp"}
                         alt="Cloud infrastructure and DevOps dashboard showing CI/CD pipelines, container orchestration, and monitoring systems"
                         fill
                         loading="lazy"
                         quality={85}
                         placeholder="blur"
-                        blurDataURL={"/ourServices/Devops.webp"}
+                        blurDataURL={"/images/ourServices/Devops.webp"}
                         className="w-full h-full object-cover hover:scale-120 duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     />
@@ -304,13 +304,13 @@ export default function OurServicesComponents() {
 
                 <figure className="relative w-full h-[350px] overflow-hidden">
                     <Image
-                        src={"/ourServices/ai.webp"}
+                        src={"/images/ourServices/ai.webp"}
                         alt="AI automation tools interface showing machine learning models, chatbot development, and predictive analytics dashboard"
                         fill
                         loading="lazy"
                         quality={85}
                         placeholder="blur"
-                        blurDataURL={"/ourServices/ai.webp"}
+                        blurDataURL={"/images/ourServices/ai.webp"}
                         className="w-full h-full object-cover hover:scale-120 duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     />

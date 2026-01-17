@@ -13,7 +13,7 @@ const Feedback = [
             "Working with Penta Studio was a game-changer for our business. Their team not only delivered a flawless product on time but also guided us through every stage with clear communication and genuine care.",
         name: "Dr. Omar Elshinawy",
         title: "CEO of Amen Platform",
-        img: "/feedbackClient/client1.svg",
+        img: "/images/feedbackClient/client1.svg",
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ const Feedback = [
             "Outstanding service and exceptional results. The team's expertise and dedication made our project a huge success. Highly recommended for anyone looking for professional development services.",
         name: "Eng. Ayman Hamdallah",
         title: "CTO of Amen Platform",
-        img: "/feedbackClient/Ayman.webp",
+        img: "/images/feedbackClient/Ayman.webp",
     },
     {
         id: 3,

@@ -4,7 +4,7 @@ import Image from "next/image";
 import logo from "@/public/Logo.svg";
 import Penta from "@/public/Penta.svg";
 import Link from "next/link";
-import Contact from "@/public/Icons/Contact.svg";
+import Contact from "@/public/icons/Contact.svg";
 import { usePathname } from "next/navigation";
 import { useDictionary } from "@/hooks/useDictionary";
 import LanguagesSelector from "./LanguagesSelector";

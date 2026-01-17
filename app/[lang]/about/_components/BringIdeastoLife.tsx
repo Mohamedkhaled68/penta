@@ -1,10 +1,20 @@
 "use client";
-import React, { useState, ChangeEvent, FormEvent, useMemo, useRef, useEffect } from "react";
-import PhoneInput, { isValidPhoneNumber, getCountryCallingCode } from "react-phone-number-input";
+import React, {
+    useState,
+    ChangeEvent,
+    FormEvent,
+    useMemo,
+    useRef,
+    useEffect,
+} from "react";
+import PhoneInput, {
+    isValidPhoneNumber,
+    getCountryCallingCode,
+} from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import en from "react-phone-number-input/locale/en";
 import { ChevronDown, Check } from "lucide-react";
-import contact from "@/public/about/contactt.svg";
+import contact from "@/public/images/about/contactt.svg";
 import Image from "next/image";
 import { AnimateOnView } from "@/components/global components/AnimateOnView";
 import toast from "react-hot-toast";
@@ -25,25 +35,39 @@ interface CountrySelectProps {
     options: CountryOption[];
 }
 
-const CountrySelect = ({ value, onChange, iconComponent: Icon, options }: CountrySelectProps) => {
+const CountrySelect = ({
+    value,
+    onChange,
+    iconComponent: Icon,
+    options,
+}: CountrySelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const wrapperRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
-            if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+            if (
+                wrapperRef.current &&
+                !wrapperRef.current.contains(event.target as Node)
+            ) {
                 setIsOpen(false);
             }
         }
         document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
+        return () =>
+            document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
     const validOptions = useMemo(() => {
-        return options?.filter((o) => o.value) as { value: import("react-phone-number-input").Country; label: string }[] || [];
+        return (
+            (options?.filter((o) => o.value) as {
+                value: import("react-phone-number-input").Country;
+                label: string;
+            }[]) || []
+        );
     }, [options]);
 
-    const selectedOption = validOptions.find(o => o.value === value);
+    const selectedOption = validOptions.find((o) => o.value === value);
 
     return (
         <div className="relative" ref={wrapperRef}>
@@ -52,28 +76,52 @@ const CountrySelect = ({ value, onChange, iconComponent: Icon, options }: Countr
                 className="flex items-center gap-2 px-2 py-1 focus:outline-none hover:bg-[#1A2040] rounded-md transition-colors"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                {Icon && value && <Icon country={value} label={selectedOption?.label || value} />}
-                <ChevronDown className={`w-4 h-4 text-[#8F9BB7] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+                {Icon && value && (
+                    <Icon
+                        country={value}
+                        label={selectedOption?.label || value}
+                    />
+                )}
+                <ChevronDown
+                    className={`w-4 h-4 text-[#8F9BB7] transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                />
             </button>
 
             {isOpen && (
-                <div className="absolute z-50 top-full left-0 mt-2 w-[300px] max-h-[300px] overflow-y-auto bg-[#0E1330] border border-[#151934] rounded-lg shadow-xl custom-scrollbar" style={{ scrollbarColor: '#29E68C #0E1330', scrollbarWidth: 'thin' }}>
+                <div
+                    className="absolute z-50 top-full left-0 mt-2 w-[300px] max-h-[300px] overflow-y-auto bg-[#0E1330] border border-[#151934] rounded-lg shadow-xl custom-scrollbar"
+                    style={{
+                        scrollbarColor: "#29E68C #0E1330",
+                        scrollbarWidth: "thin",
+                    }}
+                >
                     {validOptions.map((option) => (
                         <button
                             key={option.value}
                             type="button"
-                            className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-[#151934] group ${option.value === value ? 'bg-[#1A2040]' : ''}`}
+                            className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-[#151934] group ${option.value === value ? "bg-[#1A2040]" : ""}`}
                             onClick={() => {
                                 onChange(option.value);
                                 setIsOpen(false);
                             }}
                         >
-                            {Icon && <Icon country={option.value} label={option.label} />}
-                            <span className={`flex-1 text-sm ${option.value === value ? 'text-[#29E68C]' : 'text-[#8F9BB7] group-hover:text-[#29E68C]'}`}>
+                            {Icon && (
+                                <Icon
+                                    country={option.value}
+                                    label={option.label}
+                                />
+                            )}
+                            <span
+                                className={`flex-1 text-sm ${option.value === value ? "text-[#29E68C]" : "text-[#8F9BB7] group-hover:text-[#29E68C]"}`}
+                            >
                                 {option.label}
                             </span>
-                            <span className="text-xs text-gray-500">+{getCountryCallingCode(option.value)}</span>
-                            {option.value === value && <Check className="w-4 h-4 text-[#29E68C]" />}
+                            <span className="text-xs text-gray-500">
+                                +{getCountryCallingCode(option.value)}
+                            </span>
+                            {option.value === value && (
+                                <Check className="w-4 h-4 text-[#29E68C]" />
+                            )}
                         </button>
                     ))}
                 </div>
@@ -134,7 +182,10 @@ export default function BringIdeastoLife() {
             newErrors.email =
                 dictionary?.about_page?.section3?.form?.errors?.email_invalid;
         }
-        if (!formData.phoneNumber || !isValidPhoneNumber(formData.phoneNumber)) {
+        if (
+            !formData.phoneNumber ||
+            !isValidPhoneNumber(formData.phoneNumber)
+        ) {
             newErrors.phoneNumber =
                 dictionary?.about_page?.section3?.form?.errors?.phone_required;
         }
@@ -153,7 +204,7 @@ export default function BringIdeastoLife() {
 
     // Handle input changes with proper typing
     const handleInputChange = (
-        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ): void => {
         const { name, value, type } = e.target;
         const checked = (e.target as HTMLInputElement).checked;
@@ -191,7 +242,7 @@ export default function BringIdeastoLife() {
 
     // API submission function with proper typing
     const handleSubmit = async (
-        e: FormEvent<HTMLButtonElement> | React.MouseEvent<HTMLElement>
+        e: FormEvent<HTMLButtonElement> | React.MouseEvent<HTMLElement>,
     ): Promise<void> => {
         e.preventDefault();
 
@@ -203,28 +254,30 @@ export default function BringIdeastoLife() {
         setIsSubmitting(true);
 
         try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
             });
 
-            if (!response.ok) throw new Error('Failed to submit form');
+            if (!response.ok) throw new Error("Failed to submit form");
 
             setFormData({
-                firstName: '',
-                lastName: '',
-                email: '',
-                phoneNumber: '',
-                country: 'EG',
-                message: '',
+                firstName: "",
+                lastName: "",
+                email: "",
+                phoneNumber: "",
+                country: "EG",
+                message: "",
                 agreeToTerms: false,
             });
             setErrors({});
 
-            toast.success("Thanks for reaching out! We’ll call you back shortly.");
+            toast.success(
+                "Thanks for reaching out! We’ll call you back shortly.",
+            );
         } catch (error) {
-            console.error('Error submitting form:', error);
+            console.error("Error submitting form:", error);
             toast.error("Oops! Something went wrong. Please try again.");
         } finally {
             setIsSubmitting(false);
@@ -491,9 +544,9 @@ export default function BringIdeastoLife() {
                         >
                             {isSubmitting
                                 ? dictionary?.about_page?.section3?.form
-                                    ?.submitting_btn
+                                      ?.submitting_btn
                                 : dictionary?.about_page?.section3?.form
-                                    ?.submit_btn}
+                                      ?.submit_btn}
                         </HoverButton>
                     </div>
                 </div>

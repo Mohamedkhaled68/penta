@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import svg1 from "@/public/Icons/Our Process/Frame.svg";
-import svg2 from "@/public/Icons/Our Process/Frame-1.svg";
-import svg3 from "@/public/Icons/Our Process/Frame-2.svg";
-import svg4 from "@/public/Icons/Our Process/Frame-5.svg";
-import svg5 from "@/public/Icons/Our Process/Frame-4.svg";
-import svg6 from "@/public/Icons/Our Process/Frame-3.svg";
+import svg1 from "@/public/icons/Our Process/Frame.svg";
+import svg2 from "@/public/icons/Our Process/Frame-1.svg";
+import svg3 from "@/public/icons/Our Process/Frame-2.svg";
+import svg4 from "@/public/icons/Our Process/Frame-5.svg";
+import svg5 from "@/public/icons/Our Process/Frame-4.svg";
+import svg6 from "@/public/icons/Our Process/Frame-3.svg";
 import Image from "next/image";
 import { AnimateOnView } from "../global components/AnimateOnView";
 import { useDictionary } from "@/hooks/useDictionary";

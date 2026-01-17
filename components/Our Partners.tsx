@@ -11,47 +11,47 @@ import { useDictionary } from "@/hooks/useDictionary";
 const partnersData = [
     {
         id: 1,
-        svg: "/Icons/partners/AWS.webp",
+        svg: "/icons/partners/AWS.webp",
         name: "aaa",
     },
     {
         id: 2,
-        svg: "/Icons/partners/DOCN_BIG.webp",
+        svg: "/icons/partners/DOCN_BIG.webp",
         name: "aaa",
     },
     {
         id: 3,
-        svg: "/Icons/partners/GoDaddy-Logo-Logo.wine.webp",
+        svg: "/icons/partners/GoDaddy-Logo-Logo.wine.webp",
         name: "aaa",
     },
     {
         id: 4,
-        svg: "/Icons/partners/pngwing.com.webp",
+        svg: "/icons/partners/pngwing.com.webp",
         name: "aaa",
     },
     {
         id: 5,
-        svg: "/Icons/partners/idhsVkAMUy_1768576148245.webp",
+        svg: "/icons/partners/idhsVkAMUy_1768576148245.webp",
         name: "aaa",
     },
     {
         id: 6,
-        svg: "/Icons/partners/pp.webp",
+        svg: "/icons/partners/pp.webp",
         name: "aaa",
     },
     {
         id: 7,
-        svg: "/Icons/partners/pngwing.com (1).webp",
+        svg: "/icons/partners/pngwing.com (1).webp",
         name: "aaa",
     },
     {
         id: 8,
-        svg: "/Icons/partners/react.webp",
+        svg: "/icons/partners/react.webp",
         name: "aaa",
     },
     {
         id: 9,
-        svg: "/Icons/partners/pngwingzzz.com.webp",
+        svg: "/icons/partners/pngwingzzz.com.webp",
         name: "aaa",
     },
 ];
