@@ -75,14 +75,15 @@ export default function OurServicesComponents() {
                     </Link> */}
                 </div>
 
-                <figure className="relative w-1/2 max-lg:w-full h-[250px] sm:h-[300px] lg:h-[373px] max-w-[400px] lg:max-w-[518px] mx-auto rounded-2xl rounded-3xl overflow-hidden">
+                <figure className="relative w-1/2 max-lg:w-full h-[250px] sm:h-[300px] lg:h-[373px] max-w-[400px] lg:max-w-[518px] mx-auto rounded-2xl lg:rounded-3xl overflow-hidden">
                     <Image
-                        src={Management}
+                        src={"/OurServices/MANG.webp"}
                         alt="Custom ERP and CRM dashboard interface showing business analytics, workflow automation, and real-time reporting features"
                         fill
                         priority
                         quality={90}
                         placeholder="blur"
+                        blurDataURL={"/OurServices/MANG.webp"}
                         className="object-cover rounded-2xl lg:rounded-3xl hover:scale-120 duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 518px"
                     />
@@ -95,12 +96,13 @@ export default function OurServicesComponents() {
             >
                 <figure className="relative w-1/2 max-lg:w-full h-[300px] max-lg:h-[390px] max-md:h-[300px] rounded-3xl overflow-hidden z-50">
                     <Image
-                        src={WebDevelopment}
+                        src={"/OurServices/web.webp"}
                         alt="Modern web development portfolio featuring responsive websites, e-commerce platforms, and progressive web applications with SEO optimization"
                         fill
                         loading="lazy"
                         quality={85}
                         placeholder="blur"
+                        blurDataURL={"/OurServices/web.webp"}
                         className="object-cover rounded-3xl hover:scale-120 duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     />
@@ -192,12 +194,13 @@ export default function OurServicesComponents() {
 
                 <figure className="relative w-1/2 max-lg:w-full max-md:w-[530px] max-sm:w-full h-[300px] max-lg:h-[390px] max-md:h-[300px] order-1 lg:order-2 rounded-3xl overflow-hidden">
                     <Image
-                        src={Mobile}
+                        src={"/OurServices/mob.webp"}
                         alt="Mobile app development portfolio showing iOS and Android applications with modern UI design and cross-platform compatibility"
                         fill
                         loading="lazy"
                         quality={85}
                         placeholder="blur"
+                        blurDataURL={"/OurServices/mob.webp"}
                         className="object-cover rounded-3xl hover:scale-120 duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     />
@@ -211,12 +214,13 @@ export default function OurServicesComponents() {
             >
                 <figure className="relative w-full h-[350px] max-sm:h-[250px] overflow-hidden">
                     <Image
-                        src={Devops}
+                        src={"/OurServices/Devops.webp"}
                         alt="Cloud infrastructure and DevOps dashboard showing CI/CD pipelines, container orchestration, and monitoring systems"
                         fill
                         loading="lazy"
                         quality={85}
                         placeholder="blur"
+                        blurDataURL={"/OurServices/Devops.webp"}
                         className="w-full h-full object-cover hover:scale-120 duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     />
@@ -308,12 +312,13 @@ export default function OurServicesComponents() {
 
                 <figure className="relative w-full h-[350px] overflow-hidden">
                     <Image
-                        src={AI}
+                        src={"/OurServices/ai.webp"}
                         alt="AI automation tools interface showing machine learning models, chatbot development, and predictive analytics dashboard"
                         fill
                         loading="lazy"
                         quality={85}
                         placeholder="blur"
+                        blurDataURL={"/OurServices/ai.webp"}
                         className="w-full h-full object-cover hover:scale-120 duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     />
