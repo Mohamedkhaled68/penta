@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import svg1 from "@/public/About/Frame3.svg";
-import svg2 from "@/public/About/Frame2.svg";
-import svg3 from "@/public/About/Frame1.svg";
+import svg1 from "@/public/about/Frame3.svg";
+import svg2 from "@/public/about/Frame2.svg";
+import svg3 from "@/public/about/Frame1.svg";
 import Image from "next/image";
 import { AnimateOnView } from "@/components/global components/AnimateOnView";
 import { useDictionary } from "@/hooks/useDictionary";

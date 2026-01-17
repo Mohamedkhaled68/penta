@@ -65,7 +65,7 @@ export default function AboutPenta() {
                     <div className="relative w-[365px] h-[400px] rounded-xl shadow-[0_0_74px_0_rgba(46,230,188,0.3)]">
                         <div className="w-[171px] h-[171px] absolute -top-[75px] -right-[75px] z-0">
                             <Image
-                                src={"/About/Vector-1.svg"}
+                                src={"/about/Vector-1.svg"}
                                 alt="Decorative top shadow element"
                                 // className="w-[171px] h-[171px] absolute -top-[75px] -right-[75px] z-0"
                                 priority
@@ -74,7 +74,7 @@ export default function AboutPenta() {
                         </div>
                         <div className="w-[171px] h-[171px] absolute -bottom-[75px] -left-[75px] z-50">
                             <Image
-                                src={"/About/Vector.svg"}
+                                src={"/about/Vector.svg"}
                                 alt="Decorative bottom shadow element"
                                 fill
                                 // className="w-[171px] h-[171px] absolute -bottom-[75px] -left-[75px] z-50"
@@ -82,7 +82,7 @@ export default function AboutPenta() {
                         </div>
 
                         <Image
-                            src={"/About/mainbg.webp"}
+                            src={"/about/mainbg.webp"}
                             fill
                             alt="Penta Studio development team collaborating on a project"
                             className="w-[365px] h-[400px] object-cover rounded-xl relative z-10"

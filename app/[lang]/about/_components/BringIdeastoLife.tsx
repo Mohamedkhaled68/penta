@@ -4,7 +4,7 @@ import PhoneInput, { isValidPhoneNumber, getCountryCallingCode } from "react-pho
 import "react-phone-number-input/style.css";
 import en from "react-phone-number-input/locale/en";
 import { ChevronDown, Check } from "lucide-react";
-import contact from "@/public/About/contactt.svg";
+import contact from "@/public/about/contactt.svg";
 import Image from "next/image";
 import { AnimateOnView } from "@/components/global components/AnimateOnView";
 import toast from "react-hot-toast";
