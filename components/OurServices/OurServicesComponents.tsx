@@ -1,11 +1,6 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import Management from "@/public/OurServices/MANG.webp";
-import Devops from "@/public/OurServices/Devops.webp";
-import AI from "@/public/OurServices/ai.webp";
-import Mobile from "@/public/OurServices/mob.webp";
-import WebDevelopment from "@/public/OurServices/web.webp";
 import shaddow from "@/public/OurServices/shaddddow.svg";
 import shaddow2 from "@/public/Ellipse 2.svg";
 import rightshadoow from "@/public/OurServices/rightshadoow.svg";
@@ -325,7 +320,9 @@ export default function OurServicesComponents() {
                 </figure>
             </AnimateOnView>
 
-            <AnimateOnView animation="up" className="mt-5 col-span-2 py-4 sm:py-6 px-4 bg-[#0E1330]/85 border-2 border-[#282D45] rounded-xl flex flex-col sm:flex-row justify-center sm:justify-evenly items-center gap-4 sm:gap-6 lg:gap-8"
+            <AnimateOnView
+                animation="up"
+                className="mt-5 col-span-2 py-4 sm:py-6 px-4 bg-[#0E1330]/85 border-2 border-[#282D45] rounded-xl flex flex-col sm:flex-row justify-center sm:justify-evenly items-center gap-4 sm:gap-6 lg:gap-8"
                 aria-label="Call to action section"
             >
                 <h4 className="bg-gradient-to-t from-[#29E68C] via-[#29E68C] to-[#F6F6F7] bg-clip-text text-transparent font-bold text-lg sm:text-xl xl:text-3xl text-center sm:text-left">

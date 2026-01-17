@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 import LanguagesSelector from "./LanguagesSelector";
 import { useDictionary } from "@/hooks/useDictionary";
 import { HoverButton } from "@/components/global components/HoverButton";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Navbar() {
     const [activeSection, setActiveSection] = useState<string>("home");

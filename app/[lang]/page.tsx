@@ -4,7 +4,6 @@ import LoadingFallback from "@/components/LoadingFallback";
 import OurPartners from "@/components/Our Partners";
 import OurProcess from "@/components/OurProcess";
 import OurServices from "@/components/OurServices";
-import OurWorks from "@/components/OurWorks";
 import { Metadata } from "next";
 import { Suspense } from "react";
 
