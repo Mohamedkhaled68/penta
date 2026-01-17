@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -14,14 +14,14 @@ export async function POST(req: NextRequest) {
 
         if (!email || !/\S+@\S+\.\S+/.test(email)) {
             return NextResponse.json(
-                { error: 'Please provide a valid email address' },
+                { error: "Please provide a valid email address" },
                 { status: 400 }
             );
         }
 
         await resend.emails.send({
-            from: 'Penta Studio <onboarding@resend.dev>',
-            to: [process.env.COMPANY_EMAIL || 'gadoomarsh@gmail.com'],
+            from: "Penta Studio <onboarding@resend.dev>",
+            to: [process.env.COMPANY_EMAIL || "penta.studioo@gmail.com"],
             subject: `📞 New Contact Request`,
             html: `
     <html>
@@ -35,13 +35,13 @@ export async function POST(req: NextRequest) {
       </div>
     </body>
     </html>
-  `
+  `,
         });
 
         await resend.emails.send({
-            from: 'Penta Studio <onboarding@resend.dev>',
+            from: "Penta Studio <onboarding@resend.dev>",
             to: [email],
-            subject: '📞 We will contact you soon',
+            subject: "📞 We will contact you soon",
             html: `
     <html>
     <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background:#0F1629; padding:40px; color:#fff;">
@@ -53,20 +53,22 @@ export async function POST(req: NextRequest) {
       </div>
     </body>
     </html>
-  `
+  `,
         });
 
-
         return NextResponse.json(
-            { success: true, message: 'Subscribed successfully' },
+            { success: true, message: "Subscribed successfully" },
             { status: 200 }
         );
 
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
-        console.error('Newsletter subscription error:', error);
+        console.error("Newsletter subscription error:", error);
         return NextResponse.json(
-            { error: 'Something went wrong', details: error.message || 'Unknown error' },
+            {
+                error: "Something went wrong",
+                details: error.message || "Unknown error",
+            },
             { status: 500 }
         );
     }

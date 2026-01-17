@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
 
         const emailToCompany = await resend.emails.send({
             from: "Penta Studio <onboarding@resend.dev>",
-            to: [process.env.COMPANY_EMAIL || "gadoomarsh@gmail.com"],
+            to: [process.env.COMPANY_EMAIL || "penta.studioo@gmail.com"],
             subject: `🎯 New Lead: ${firstName} ${lastName}`,
             html: `
                 <!DOCTYPE html>
