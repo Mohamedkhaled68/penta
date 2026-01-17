@@ -2,12 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
-import main from "@/public/About/mainbg.webp";
-import shadowbottom from "@/public/About/Vector.svg";
-import shadowtop from "@/public/About/Vector-1.svg";
 import { AnimateOnView } from "@/components/global components/AnimateOnView";
-import "../style.css";
 import { useDictionary } from "@/hooks/useDictionary";
+import "../style.css";
 
 export default function AboutPenta() {
     const dictionary = useDictionary();
@@ -65,22 +62,28 @@ export default function AboutPenta() {
             </div>
             <div className="w-max max-md:hidden mr-10">
                 <AnimateOnView animation="up">
-                    <div className="w-[365px] h-[400px] rounded-xl shadow-[0_0_74px_0_rgba(46,230,188,0.3)] relative">
-                        <Image
-                            src={shadowtop}
-                            alt="Decorative top shadow element"
-                            className="w-[171px] h-[171px] absolute -top-[75px] -right-[75px] z-0"
-                            priority
-                        />
+                    <div className="relative w-[365px] h-[400px] rounded-xl shadow-[0_0_74px_0_rgba(46,230,188,0.3)]">
+                        <div className="w-[171px] h-[171px] absolute -top-[75px] -right-[75px] z-0">
+                            <Image
+                                src={"/About/Vector-1.svg"}
+                                alt="Decorative top shadow element"
+                                // className="w-[171px] h-[171px] absolute -top-[75px] -right-[75px] z-0"
+                                priority
+                                fill
+                            />
+                        </div>
+                        <div className="w-[171px] h-[171px] absolute -bottom-[75px] -left-[75px] z-50">
+                            <Image
+                                src={"/About/Vector.svg"}
+                                alt="Decorative bottom shadow element"
+                                fill
+                                // className="w-[171px] h-[171px] absolute -bottom-[75px] -left-[75px] z-50"
+                            />
+                        </div>
 
                         <Image
-                            src={shadowbottom}
-                            alt="Decorative bottom shadow element"
-                            className="w-[171px] h-[171px] absolute -bottom-[75px] -left-[75px] z-50"
-                        />
-
-                        <Image
-                            src={main}
+                            src={"/About/mainbg.webp"}
+                            fill
                             alt="Penta Studio development team collaborating on a project"
                             className="w-[365px] h-[400px] object-cover rounded-xl relative z-10"
                             priority

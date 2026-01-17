@@ -6,68 +6,54 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import Image from "next/image";
 import middle from "@/public/Ellipse 15.svg";
-import partner1 from "@/public/Icons/partners/AWS.webp";
-import partner2 from "@/public/Icons/partners/DOCN_BIG.webp";
-import partner3 from "@/public/Icons/partners/GoDaddy-Logo-Logo.wine.webp";
-import partner4 from "@/public/Icons/partners/pngwing.com.webp";
-import partner5 from "@/public/Icons/partners/idhsVkAMUy_1768576148245.webp";
-import partner6 from "@/public/Icons/partners/pp.webp";
-import partner7 from "@/public/Icons/partners/pngwing.com (1).webp";
-import partner8 from "@/public/Icons/partners/react.webp";
-import partner9 from "@/public/Icons/partners/pngwingzzz.com.webp";
 import { useDictionary } from "@/hooks/useDictionary";
 
 const partnersData = [
     {
         id: 1,
-        svg: partner1,
+        svg: "/Icons/partners/AWS.webp",
         name: "aaa",
     },
     {
         id: 2,
-        svg: partner2,
+        svg: "/Icons/partners/DOCN_BIG.webp",
         name: "aaa",
     },
     {
         id: 3,
-        svg: partner3,
+        svg: "/Icons/partners/GoDaddy-Logo-Logo.wine.webp",
         name: "aaa",
     },
     {
         id: 4,
-        svg: partner4,
+        svg: "/Icons/partners/pngwing.com.webp",
         name: "aaa",
     },
     {
         id: 5,
-        svg: partner5,
+        svg: "/Icons/partners/idhsVkAMUy_1768576148245.webp",
         name: "aaa",
     },
     {
         id: 6,
-        svg: partner6,
+        svg: "/Icons/partners/pp.webp",
         name: "aaa",
     },
     {
         id: 7,
-        svg: partner7,
+        svg: "/Icons/partners/pngwing.com (1).webp",
         name: "aaa",
     },
     {
         id: 8,
-        svg: partner8,
+        svg: "/Icons/partners/react.webp",
         name: "aaa",
     },
     {
         id: 9,
-        svg: partner9,
+        svg: "/Icons/partners/pngwingzzz.com.webp",
         name: "aaa",
     },
-    // {
-    //     id: 10,
-    //     svg: svg1,
-    //     name: "aaa",
-    // },
 ];
 
 export default function OurPartners() {
@@ -87,7 +73,8 @@ export default function OurPartners() {
                     className="z-0 absolute inset-0 m-auto"
                 />
                 <h1 className="text-center bg-gradient-to-t from-[#29E68C] via-[#29E68C] to-[#F6F6F7] bg-clip-text text-transparent text-5xl max-md:text-3xl font-bold transition-colors duration-700 pb-1.5">
-                    {dictionary?.ourPartners?.title || "Our Technology Partners"}
+                    {dictionary?.ourPartners?.title ||
+                        "Our Technology Partners"}
                 </h1>
             </motion.div>
 
@@ -149,13 +136,16 @@ export default function OurPartners() {
                             <SwiperSlide key={`${partner.id}-${index}`}>
                                 <motion.div
                                     transition={{ duration: 0.3 }}
-                                    className="w-full max-md:w-[200px] max-sm:w-[170px] h-28 max-sm:h-24 bg-[#0E1330] backdrop-blur-sm rounded-xl border border-[#282D45] hover:border-[#29E68B] transition-all duration-200 hover:transform hover:shadow-[0_10px_30px_-5px_#0D2834] flex items-center justify-center p-4 mx-auto"
+                                    className=" w-full max-md:w-[200px] max-sm:w-[170px] h-28 max-sm:h-24 bg-[#0E1330] backdrop-blur-sm rounded-xl border border-[#282D45] hover:border-[#29E68B] transition-all duration-200 hover:transform hover:shadow-[0_10px_30px_-5px_#0D2834] flex items-center justify-center p-4 mx-auto"
                                 >
-                                    <Image
-                                        src={partner.svg}
-                                        alt={partner.name}
-                                        className="h-16 max-sm:h-14 w-full object-contain mx-auto"
-                                    />
+                                    <div className="relative w-full h-full">
+                                        <Image
+                                            src={partner.svg}
+                                            alt={partner.name}
+                                            fill
+                                            className="h-16 max-sm:h-14 w-full object-contain mx-auto"
+                                        />
+                                    </div>
                                 </motion.div>
                             </SwiperSlide>
                         )
