@@ -112,14 +112,14 @@ export default async function RootLayout({
         alternateName: ["Penta Studio Development", "Penta Software Studio"],
         description:
             "Professional software development company specializing in web applications, mobile apps, cloud solutions, and AI automation services for businesses worldwide.",
-        // "url": "https://your-domain.com",
+        // "url": "https://pentastudio.tech",
         logo: {
             "@type": "ImageObject",
-            // "url": "https://your-domain.com/Logo.svg",
+            // "url": "https://pentastudio.tech/Logo.svg",
             width: 200,
             height: 60,
         },
-        // "image": "https://your-domain.com/og-image.jpg",
+        // "image": "https://pentastudio.tech/og-image.jpg",
         sameAs: [
             "https://www.linkedin.com/company/penta-std/",
             "https://x.com/PentaStd",
@@ -220,7 +220,7 @@ export default async function RootLayout({
         "@type": "WebSite",
         name: "Penta Studio",
         alternateName: "Penta Studio - Software Development",
-        // "url": "https://your-domain.com",
+        // "url": "https://pentastudio.tech",
         description:
             "Professional software development services including web development, mobile apps, cloud solutions, and AI automation.",
         publisher: {
@@ -231,7 +231,7 @@ export default async function RootLayout({
             "@type": "SearchAction",
             target: {
                 "@type": "EntryPoint",
-                // "urlTemplate": "https://your-domain.com/search?q={search_term_string}"
+                // "urlTemplate": "https://pentastudio.tech/search?q={search_term_string}"
             },
             "query-input": "required name=search_term_string",
         },

@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://your-domain.com',
+    siteUrl: "https://pentastudio.tech",
     generateRobotsTxt: true,
-}
+};
