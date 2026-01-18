@@ -71,12 +71,12 @@ export const metadata: Metadata = {
         },
     },
     icons: {
-        icon: [{ url: "/Logo.svg", sizes: "any", type: "image/svg+xml" }],
-        apple: [{ url: "/Logo.svg", sizes: "180x180", type: "image/svg+xml" }],
+        icon: [{ url: "/profile.webp", sizes: "any", type: "image/webp" }],
+        apple: [{ url: "/profile.webp", sizes: "180x180", type: "image/webp" }],
         other: [
             {
                 rel: "mask-icon",
-                url: "/Logo.svg",
+                url: "/profile.webp",
                 color: "#29E68C",
             },
         ],
