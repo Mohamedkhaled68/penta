@@ -219,7 +219,7 @@ export default function Navbar() {
                 <div className="w-[120px] h-[40px]">
                     <HoverButton
                         as="a"
-                        href="https://wa.me/0201551850855"
+                        href="https://wa.me/201551850855"
                         target="_blank"
                         className="w-[120px] h-[40px] bg-[#29E68C] text-[#060B27] border-[0.5px] border-[#29E68B] text-base font-medium cursor-pointer rounded-[36px] transition-all duration-300 ease-in-out hover:shadow-lg flex justify-center items-center gap-[10px]"
                     >
