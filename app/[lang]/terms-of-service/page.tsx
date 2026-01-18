@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         locale: "en_US",
         siteName: "Penta Studio",
         url: "https://pentastudio.tech/terms-of-service",
-
+        images: ["/profile.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
         description:
             "Read Penta Studio's terms of service and conditions for using our software development services.",
         creator: "@PentaStd",
-
+        images: ["/profile.webp"],
     },
     robots: {
         index: true,

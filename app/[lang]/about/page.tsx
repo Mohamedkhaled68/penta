@@ -38,6 +38,7 @@ export const metadata: Metadata = {
         locale: "en_US",
         siteName: "Penta Studio",
         url: "https://pentastudio.tech/about",
+        images: ["/profile.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -45,6 +46,7 @@ export const metadata: Metadata = {
         description:
             "Learn about Penta Studio's mission, team, and expertise in software development.",
         creator: "@PentaStd", // Replace with your actual Twitter handle
+        images: ["/profile.webp"],
     },
     robots: {
         index: true,

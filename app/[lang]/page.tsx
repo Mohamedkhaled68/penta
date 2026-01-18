@@ -48,6 +48,7 @@ export const metadata: Metadata = {
         description:
             "Expert development services for web, mobile, and cloud-native solutions. Custom ERP systems, mobile apps, AI automation, and DevOps infrastructure.",
         siteName: "Penta Studio",
+        images: ["/profile.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -55,6 +56,7 @@ export const metadata: Metadata = {
         description:
             "Expert development services for web, mobile, and cloud-native solutions.",
         creator: "@PentaStd",
+        images: ["/profile.webp"],
     },
     robots: {
         index: true,

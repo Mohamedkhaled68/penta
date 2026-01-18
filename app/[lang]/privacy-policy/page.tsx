@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         locale: "en_US",
         siteName: "Penta Studio",
         url: "https://pentastudio.tech/privacy-policy",
-
+        images: ["/profile.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -45,6 +45,7 @@ export const metadata: Metadata = {
         description:
             "Learn how Penta Studio protects your personal information and ensures data security.",
         creator: "@pentastudio",
+        images: ["/profile.webp"],
     },
     robots: {
         index: true,

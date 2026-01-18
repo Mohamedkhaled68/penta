@@ -46,6 +46,7 @@ export const metadata: Metadata = {
         title: "Penta Studio - Transform Ideas Into Secure Digital Products",
         description:
             "Professional software development company specializing in modern web applications, mobile apps, and cloud solutions for businesses worldwide.",
+        images: ["/profile.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -54,6 +55,7 @@ export const metadata: Metadata = {
             "Professional software development company specializing in modern web applications, mobile apps, and cloud solutions.",
         creator: "@PentaStd",
         site: "@PentaStd",
+        images: ["/profile.webp"],
     },
     robots: {
         index: true,
@@ -115,11 +117,11 @@ export default async function RootLayout({
         // "url": "https://pentastudio.tech",
         logo: {
             "@type": "ImageObject",
-            // "url": "https://pentastudio.tech/Logo.svg",
+            "url": "https://pentastudio.tech/profile.webp",
             width: 200,
             height: 60,
         },
-        // "image": "https://pentastudio.tech/og-image.jpg",
+        // "image": "https://pentastudio.tech/profile.webp",
         sameAs: [
             "https://www.linkedin.com/company/penta-std/",
             "https://x.com/PentaStd",
