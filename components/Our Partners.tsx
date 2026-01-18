@@ -87,7 +87,7 @@ export default function OurPartners() {
             >
                 <Swiper
                     modules={[Autoplay]}
-                    spaceBetween={25}
+                    spaceBetween={35}
                     slidesPerView={2}
                     loop={true}
                     autoplay={{
@@ -136,7 +136,7 @@ export default function OurPartners() {
                             <SwiperSlide key={`${partner.id}-${index}`}>
                                 <motion.div
                                     transition={{ duration: 0.3 }}
-                                    className=" w-full max-md:w-[200px] max-sm:w-[170px] h-28 max-sm:h-24 bg-[#0E1330] backdrop-blur-sm rounded-xl border border-[#282D45] hover:border-[#29E68B] transition-all duration-200 hover:transform hover:shadow-[0_10px_30px_-5px_#0D2834] flex items-center justify-center p-4 mx-auto"
+                                    className=" w-full max-md:w-[200px] max-sm:w-[160px] h-28 max-sm:h-24 bg-[#0E1330] backdrop-blur-sm rounded-xl border border-[#282D45] hover:border-[#29E68B] transition-all duration-200 hover:transform hover:shadow-[0_10px_30px_-5px_#0D2834] flex items-center justify-center p-4 mx-auto"
                                 >
                                     <div className="relative w-full h-full">
                                         <Image

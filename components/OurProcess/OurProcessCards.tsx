@@ -56,13 +56,13 @@ export default function OurProcessCards() {
                             className="w-10 h-10 mb-7 max-md:mb-5"
                             alt="Process Step Icon"
                         />
-                        <h3 className="text-[#F6F6F7] text-2xl font-bold mb-3 max-md:gap-2">
+                        <h3 className="text-[#F6F6F7] text-2xl max-sm:text-xl font-bold mb-3 max-md:gap-2">
                             {
                                 dictionary?.ourProcess?.steps[product.id - 1]
                                     ?.title
                             }
                         </h3>
-                        <p className="text-[#8F9BB7]">
+                        <p className="text-[#8F9BB7] max-sm:text-sm">
                             {
                                 dictionary?.ourProcess?.steps[product.id - 1]
                                     ?.description

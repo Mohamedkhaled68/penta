@@ -15,13 +15,14 @@ import {
 import Link from "next/link";
 import { useDictionary } from "@/hooks/useDictionary";
 import { HoverButton } from "@/components/global components/HoverButton";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import toast from "react-hot-toast";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
     const dictionary = useDictionary();
     const { lang } = useParams<{ lang: string }>();
+    const pathname = usePathname();
 
     // Add state for newsletter form
     const [newsletterEmail, setNewsletterEmail] = useState<string>("");
@@ -62,6 +63,40 @@ export default function Footer() {
         } finally {
             setIsSubmittingNewsletter(false);
         }
+    };
+
+    // Helper function to check if a link is active
+    const isLinkActive = (href: string): boolean => {
+        // Remove language prefix from pathname for comparison
+        const cleanPathname = pathname.replace(/^\/(en|ar)/, '') || '/';
+        const cleanHref = href.replace(/^\/(en|ar)/, '') || '/';
+        
+        // For home page
+        if (cleanHref === '/' || cleanHref === '') {
+            return cleanPathname === '/' || cleanPathname === '';
+        }
+        
+        // For about page
+        if (cleanHref === '/about') {
+            return cleanPathname === '/about';
+        }
+        
+        // For section links (services, partners)
+        if (cleanHref.startsWith('/#')) {
+            return cleanPathname === '/' || cleanPathname === '';
+        }
+        
+        return cleanPathname === cleanHref;
+    };
+
+    // Helper function to get link class based on active state
+    const getLinkClass = (href: string): string => {
+        const isActive = isLinkActive(href);
+        return `transition-colors ${
+            isActive 
+                ? "text-[#29E68B]" 
+                : "text-white hover:text-[#29E68B]"
+        }`;
     };
 
     return (
@@ -152,11 +187,11 @@ export default function Footer() {
                         role="navigation"
                         aria-label="Footer navigation"
                     >
-                        <ul className="flex flex-wrap justify-center text-lg gap-8 max-md:gap-6 md:gap-12 text-white list-none max-md:text-center">
+                        <ul className="flex flex-wrap justify-center text-lg gap-8 max-md:gap-6 md:gap-12 list-none max-md:text-center">
                             <li>
                                 <Link
                                     href={`/${lang}`}
-                                    className="text-[#29E68B] hover:text-green-300 transition-colors"
+                                    className={getLinkClass(`/${lang}`)}
                                     aria-label="Go to Penta Studio homepage"
                                     title="Penta Studio - Web Design & Development Services"
                                 >
@@ -166,27 +201,17 @@ export default function Footer() {
                             <li>
                                 <Link
                                     href={`/${lang}#services`}
-                                    className="hover:text-[#29E68B] transition-colors"
+                                    className={getLinkClass(`/${lang}#services`)}
                                     aria-label="View our web development and design services"
                                     title="Web Development, UI/UX Design, and Digital Marketing Services"
                                 >
                                     {dictionary?.footer?.services || "Services"}
                                 </Link>
                             </li>
-                            {/* <li>
-                                <Link
-                                    href={`/${lang}#our-work`}
-                                    className="hover:text-[#29E68B] transition-colors"
-                                    aria-label="Browse our portfolio of web projects"
-                                    title="Portfolio - Web Development Projects by Penta Studio"
-                                >
-                                    {dictionary?.footer?.works || "Our Work"}
-                                </Link>
-                            </li> */}
                             <li>
                                 <Link
                                     href={`/${lang}#our-partners`}
-                                    className="hover:text-[#29E68B] transition-colors"
+                                    className={getLinkClass(`/${lang}#our-partners`)}
                                     aria-label="Learn about our development process"
                                     title="Our Web Development Process - From Concept to Launch"
                                 >
@@ -196,24 +221,14 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href={`/about`}
-                                    className="hover:text-[#29E68B] transition-colors"
-                                    aria-label="Learn about our development process"
-                                    title="Our Web Development Process - From Concept to Launch"
+                                    href={`/${lang}/about`}
+                                    className={getLinkClass(`/${lang}/about`)}
+                                    aria-label="Learn about Penta Studio team"
+                                    title="About Penta Studio - Our Team and Mission"
                                 >
                                     {dictionary?.navbar.about}
                                 </Link>
                             </li>
-                            {/* <li>
-                                <Link
-                                    href={`/${lang}/blog`}
-                                    className="hover:text-[#29E68B] transition-colors"
-                                    aria-label="Read our blog about web development and design trends"
-                                    title="Web Development Blog - Tips, Trends, and Insights"
-                                >
-                                    {dictionary?.footer?.blog || "Blog"}
-                                </Link>
-                            </li> */}
                         </ul>
                     </nav>
 

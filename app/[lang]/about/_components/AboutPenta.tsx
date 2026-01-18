@@ -9,7 +9,7 @@ import "../style.css";
 export default function AboutPenta() {
     const dictionary = useDictionary();
     return (
-        <section className="w-full h-screen max-sm:min-h-[750px] flex justify-between items-center pt-7 max-md:pt-0 gradient-About-penta-b px-20 max-md:px-6 overflow-hidden relative">
+        <section className="w-full h-screen max-sm:min-h-[790px] flex justify-between items-center pt-7 max-md:pt-0 gradient-About-penta-b  px-20 max-md:px-6 overflow-hidden relative">
             <div className="w-1/2 max-md:w-full flex flex-col justify-center gap-8">
                 <AnimateOnView animation="up">
                     <h1 className="text-2xl w-max font-bold text-start border-b-2 pb-1 border-b-[#29E68B]">
@@ -51,7 +51,7 @@ export default function AboutPenta() {
                             (point: string, index: number) => (
                                 <li
                                     key={index}
-                                    className="text-lg list-disc ml-5 my-2"
+                                    className="text-lg max-sm:text-[16px] list-disc ml-5 max-sm:mx-3 my-2"
                                 >
                                     {point}
                                 </li>

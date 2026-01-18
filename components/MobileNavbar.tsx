@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "@/public/Logo.svg";
 import Penta from "@/public/Penta.svg";
@@ -12,17 +12,62 @@ import LanguagesSelector from "./LanguagesSelector";
 export default function MobileNavbar() {
     const [open, setOpen] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
+    const [activeSection, setActiveSection] = useState<string>("home");
+    const [isScrolled, setIsScrolled] = useState<boolean>(false);
     const pathname = usePathname();
     const dictionary = useDictionary();
 
     const links = [
-        { href: "/", label: `${dictionary?.navbar.home}` },
-        { href: "#services", label: `${dictionary?.navbar.services}` },
-        // { href: "#our-work", label: `${dictionary?.navbar.works}` },
-        { href: "#our-partners", label: "Our Partners" },
-        { href: "/about", label: `${dictionary?.navbar.about}` },
-        // { href: "/blog", label: "Blog" },
+        { href: "/", label: `${dictionary?.navbar.home}`, section: "home" },
+        { href: "/#services", label: `${dictionary?.navbar.services}`, section: "services" },
+        { href: "/#our-partners", label: `${dictionary?.navbar.partners}`, section: "our-partners" },
+        { href: "/about", label: `${dictionary?.navbar.about}`, section: "about" },
     ];
+
+    // Track scroll to update navbar background
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    // Intersection Observer for sections (same as desktop navbar)
+    useEffect(() => {
+        const sections = ["home", "services", "our-work", "our-partners"];
+        const observers: IntersectionObserver[] = [];
+
+        sections.forEach((sectionId) => {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (
+                                entry.isIntersecting &&
+                                entry.intersectionRatio > 0.5
+                            ) {
+                                setActiveSection(sectionId);
+                            }
+                        });
+                    },
+                    { threshold: 0.5, rootMargin: "-100px 0px -100px 0px" }
+                );
+                observer.observe(element);
+                observers.push(observer);
+            }
+        });
+
+        return () => {
+            observers.forEach((observer) => observer.disconnect());
+        };
+    }, []);
 
     // Hover effect handlers (same as main navbar)
     const handleMouseEnter = (
@@ -58,40 +103,38 @@ export default function MobileNavbar() {
         target.style.webkitBackgroundClip = "";
     };
 
-    const getLinkClass = (href: string): string => {
-        const isActive = href.startsWith("#")
-            ? pathname === "/" && window.location.hash === href
-            : pathname === href;
+    const getNavButtonClass = (sectionId: string): string => {
+        const isActive = activeSection === sectionId && pathname === "/";
         return `text-xl font-medium transition-all duration-300 ease-in-out cursor-pointer relative ${
             isActive ? "text-[#29E68C]" : "text-[#8F9BB7]"
         }`;
     };
 
-    const scrollToSection = (sectionId: string): void => {
-        const element = document.getElementById(sectionId.replace("#", ""));
-        if (element) {
-            element.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        }
+    const getLinkClass = (href: string): string => {
+        const isActive = pathname === href;
+        return `text-xl font-medium transition-all duration-300 ease-in-out cursor-pointer relative ${
+            isActive ? "text-[#29E68C]" : "text-[#8F9BB7]"
+        }`;
     };
 
     const handleOpenMenu = () => {
         setOpen(true);
-        // Small delay to ensure DOM is ready, then trigger animation
         setTimeout(() => setIsAnimating(true), 10);
     };
 
     const handleCloseMenu = () => {
         setIsAnimating(false);
-        setTimeout(() => setOpen(false), 300); // Match animation duration
+        setTimeout(() => setOpen(false), 300);
     };
 
     return (
         <div className="lg:hidden">
             {/* Top Bar */}
-            <div className=" font-plex-regular mt-5 flex justify-between items-center fixed top-0 left-0 right-0 z-50 h-[60px] px-6 w-11/12 mx-auto rounded-4xl transition-all duration-500 bg-[#0E2334]/30 backdrop-blur-3xl mb-10">
+            <div className={`font-plex-regular mt-5 flex justify-between items-center fixed top-0 left-0 right-0 z-50 h-[60px] px-6 w-11/12 mx-auto rounded-4xl transition-all duration-500 mb-10 ${
+                isScrolled
+                    ? "bg-[#0E2334]/30 backdrop-blur-3xl"
+                    : "bg-[#0E2334]/30 backdrop-blur-3xl"
+            }`}>
                 <div className="flex items-center gap-3">
                     <Image src={logo} alt="penta logo" className="h-9 w-9" />
                     <Image
@@ -135,42 +178,17 @@ export default function MobileNavbar() {
                         }`}
                     >
                         {links.map((link, index) => {
-                            const isActive = link.href.startsWith("#")
-                                ? pathname === "/" &&
-                                  window.location.hash === link.href
+                            // Determine if this link is active
+                            const isActive = link.href.startsWith("/#")
+                                ? activeSection === link.section && pathname === "/"
                                 : pathname === link.href;
 
-                            return link.href.startsWith("#") ? (
-                                <button
-                                    key={link.href}
-                                    onClick={() => {
-                                        scrollToSection(link.href);
-                                        handleCloseMenu();
-                                    }}
-                                    onMouseEnter={(e) =>
-                                        handleMouseEnter(e, isActive)
-                                    }
-                                    onMouseLeave={handleMouseLeave}
-                                    className={`${getLinkClass(
-                                        link.href
-                                    )} transform transition-all duration-300 hover:scale-105 ${
-                                        isAnimating
-                                            ? "translate-x-0 opacity-100"
-                                            : index % 2 === 0
-                                            ? "-translate-x-8 opacity-0"
-                                            : "translate-x-8 opacity-0"
-                                    }`}
-                                    style={{
-                                        transitionDelay: isAnimating
-                                            ? `${index * 50}ms`
-                                            : `${
-                                                  (links.length - index) * 30
-                                              }ms`,
-                                    }}
-                                >
-                                    {link.label}
-                                </button>
-                            ) : (
+                            // Determine the CSS class
+                            const linkClass = link.href.startsWith("/#")
+                                ? getNavButtonClass(link.section)
+                                : getLinkClass(link.href);
+
+                            return (
                                 <Link
                                     key={link.href}
                                     href={link.href}
@@ -179,9 +197,7 @@ export default function MobileNavbar() {
                                         handleMouseEnter(e, isActive)
                                     }
                                     onMouseLeave={handleMouseLeave}
-                                    className={`${getLinkClass(
-                                        link.href
-                                    )} transform transition-all duration-300 hover:scale-105 ${
+                                    className={`${linkClass} transform transition-all duration-300 hover:scale-105 ${
                                         isAnimating
                                             ? "translate-x-0 opacity-100"
                                             : index % 2 === 0
