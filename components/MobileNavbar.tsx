@@ -17,11 +17,15 @@ export default function MobileNavbar() {
     const pathname = usePathname();
     const dictionary = useDictionary();
 
+    // Extract language prefix from pathname
+    const lang = pathname.includes("/ar") ? "/ar" : "";
+
+    // Add language prefix to all links
     const links = [
-        { href: "/", label: `${dictionary?.navbar.home}`, section: "home" },
-        { href: "/#services", label: `${dictionary?.navbar.services}`, section: "services" },
-        { href: "/#our-partners", label: `${dictionary?.navbar.partners}`, section: "our-partners" },
-        { href: "/about", label: `${dictionary?.navbar.about}`, section: "about" },
+        { href: `${lang}/`, label: `${dictionary?.navbar.home}`, section: "home" },
+        { href: `${lang}/#services`, label: `${dictionary?.navbar.services}`, section: "services" },
+        { href: `${lang}/#our-partners`, label: `${dictionary?.navbar.partners}`, section: "our-partners" },
+        { href: `${lang}/about`, label: `${dictionary?.navbar.about}`, section: "about" },
     ];
 
     // Track scroll to update navbar background
@@ -104,17 +108,17 @@ export default function MobileNavbar() {
     };
 
     const getNavButtonClass = (sectionId: string): string => {
-        const isActive = activeSection === sectionId && pathname === "/";
-        return `text-xl font-medium transition-all duration-300 ease-in-out cursor-pointer relative ${
-            isActive ? "text-[#29E68C]" : "text-[#8F9BB7]"
-        }`;
+        // Normalize pathname for comparison (remove language prefix)
+        const normalizedPath = pathname.replace(/^\/(ar|en)/, "") || "/";
+        const isActive = activeSection === sectionId && normalizedPath === "/";
+        return `text-xl font-medium transition-all duration-300 ease-in-out cursor-pointer relative ${isActive ? "text-[#29E68C]" : "text-[#8F9BB7]"
+            }`;
     };
 
     const getLinkClass = (href: string): string => {
         const isActive = pathname === href;
-        return `text-xl font-medium transition-all duration-300 ease-in-out cursor-pointer relative ${
-            isActive ? "text-[#29E68C]" : "text-[#8F9BB7]"
-        }`;
+        return `text-xl font-medium transition-all duration-300 ease-in-out cursor-pointer relative ${isActive ? "text-[#29E68C]" : "text-[#8F9BB7]"
+            }`;
     };
 
     const handleOpenMenu = () => {
@@ -130,11 +134,10 @@ export default function MobileNavbar() {
     return (
         <div className="lg:hidden">
             {/* Top Bar */}
-            <div className={`font-plex-regular mt-5 flex justify-between items-center fixed top-0 left-0 right-0 z-50 h-[60px] px-6 w-11/12 mx-auto rounded-4xl transition-all duration-500 mb-10 ${
-                isScrolled
+            <div className={`font-plex-regular mt-5 flex justify-between items-center fixed top-0 left-0 right-0 z-50 h-[60px] px-6 w-11/12 mx-auto rounded-4xl transition-all duration-500 mb-10 ${isScrolled
                     ? "bg-[#0E2334]/30 backdrop-blur-3xl"
                     : "bg-[#0E2334]/30 backdrop-blur-3xl"
-            }`}>
+                }`}>
                 <div className="flex items-center gap-3">
                     <Image src={logo} alt="penta logo" className="h-9 w-9" />
                     <Image
@@ -155,36 +158,36 @@ export default function MobileNavbar() {
             {/* Overlay Menu */}
             {open && (
                 <div
-                    className={`fixed inset-0 z-50 bg-[#0E2334]/20 backdrop-blur-3xl flex flex-col items-center justify-start pt-16 transition-all duration-300 ease-in-out ${
-                        isAnimating ? "opacity-100" : "opacity-0"
-                    }`}
+                    className={`fixed inset-0 z-50 bg-[#0E2334]/20 backdrop-blur-3xl flex flex-col items-center justify-start pt-16 transition-all duration-300 ease-in-out ${isAnimating ? "opacity-100" : "opacity-0"
+                        }`}
                 >
                     <button
                         onClick={handleCloseMenu}
-                        className={`absolute top-8 right-[38px] text-3xl text-[#29E68C] focus:outline-none cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-90 ${
-                            isAnimating
+                        className={`absolute top-8 right-[38px] text-3xl text-[#29E68C] focus:outline-none cursor-pointer transform transition-all duration-300 hover:scale-110 hover:rotate-90 ${isAnimating
                                 ? "opacity-100 rotate-0"
                                 : "opacity-0 rotate-180"
-                        }`}
+                            }`}
                         aria-label="Close menu"
                     >
                         &times;
                     </button>
                     <nav
-                        className={`flex flex-col gap-5 items-center transform transition-all duration-500 ease-out ${
-                            isAnimating
+                        className={`flex flex-col gap-5 items-center transform transition-all duration-500 ease-out ${isAnimating
                                 ? "translate-y-0 opacity-100 scale-100"
                                 : "translate-y-5 opacity-0 scale-95"
-                        }`}
+                            }`}
                     >
                         {links.map((link, index) => {
+                            // Normalize pathname for comparison
+                            const normalizedPath = pathname.replace(/^\/(ar|en)/, "") || "/";
+
                             // Determine if this link is active
-                            const isActive = link.href.startsWith("/#")
-                                ? activeSection === link.section && pathname === "/"
+                            const isActive = link.href.startsWith(`${lang}/#`)
+                                ? activeSection === link.section && normalizedPath === "/"
                                 : pathname === link.href;
 
                             // Determine the CSS class
-                            const linkClass = link.href.startsWith("/#")
+                            const linkClass = link.href.startsWith(`${lang}/#`)
                                 ? getNavButtonClass(link.section)
                                 : getLinkClass(link.href);
 
@@ -197,19 +200,17 @@ export default function MobileNavbar() {
                                         handleMouseEnter(e, isActive)
                                     }
                                     onMouseLeave={handleMouseLeave}
-                                    className={`${linkClass} transform transition-all duration-300 hover:scale-105 ${
-                                        isAnimating
+                                    className={`${linkClass} transform transition-all duration-300 hover:scale-105 ${isAnimating
                                             ? "translate-x-0 opacity-100"
                                             : index % 2 === 0
-                                            ? "-translate-x-8 opacity-0"
-                                            : "translate-x-8 opacity-0"
-                                    }`}
+                                                ? "-translate-x-8 opacity-0"
+                                                : "translate-x-8 opacity-0"
+                                        }`}
                                     style={{
                                         transitionDelay: isAnimating
                                             ? `${index * 50}ms`
-                                            : `${
-                                                  (links.length - index) * 30
-                                              }ms`,
+                                            : `${(links.length - index) * 30
+                                            }ms`,
                                     }}
                                 >
                                     {link.label}
